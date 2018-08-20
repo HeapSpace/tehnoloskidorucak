@@ -1,0 +1,54 @@
+footer div#footer {
+  font-size: 0.7em;
+  margin: 2em 0 0;
+}
+
+footer {
+  ul {
+  	list-style: none;
+  	padding-left: 0;
+  	margin-left: 0;
+  }
+}
+
+#mc_embed_signup {
+	clear: left;
+	font-size: .7em;
+	width: 100%;
+
+	input.email {
+		border: 1px solid $color-hs-black;
+		color: $color-hs-black;
+		background-color: transparent;
+		box-shadow: none;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		-webkit-appearance: none;
+		-webkit-border-radius: 0px;
+		padding: 30px 20px;
+		display: inline-block;
+		margin: 0;
+		z-index: 2;
+		width: 80%;
+		float:left;
+	}
+
+	.button {
+		height: 84px;
+		width: 84px;
+		border-radius: 100%;
+		background-color: $color-hs-black;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		line-height: 90px;
+		display: inline-block;
+		cursor: pointer;
+		color: $color-hs-white;
+		margin-left: 20px;
+		margin-top: 0;
+		font-size: 50px;
+		z-index: 2;
+		float:left;
+	}
+}

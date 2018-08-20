@@ -1,2 +1,2 @@
-# tehnoloskidorucak
-Tehnoloski dorucak website
+# Tehnoloski Doručak website
+

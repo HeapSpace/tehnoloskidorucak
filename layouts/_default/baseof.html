@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+  		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>{{ .Title }} - {{ .Site.Title }}</title>
+
+		{{ $style := resources.Get "sass/style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+		<link rel='stylesheet' href='{{ $style.RelPermalink }}' type='text/css' media='all' />
+
+		{{ partial "head" . }}
+    </head>
+    <body class="bg-beige">
+    	{{ partial "header" . }}
+
+    	<main class="grid">
+  			<div class="content-wrap">
+
+		{{ block "main" . }}{{ end }}
+
+			</div>
+		</main>
+
+		{{ partial "footer" . }}
+
+		{{ partial "js" . }}
+    </body>
+</html>

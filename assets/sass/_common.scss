@@ -1,0 +1,186 @@
+
+@font-face {
+  font-family: 'HS Grotesk';
+  src: url('/fonts/HS Grotesk.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Menoe Grotesque';
+  src: url('/fonts/Menoe-Grotesque-Std-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-family: $font-main;
+  -ms-text-size-adjust: 100%;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+}
+
+/** COLORS */
+
+.red {
+  color: $color-hs-red;
+}
+
+.beige {
+  color: $color-hs-beige;
+}
+
+.blue {
+  color: $color-hs-blue;
+}
+
+.black {
+  color: $color-hs-black;
+}
+
+.white {
+  color: $color-hs-white;
+}
+
+.bg-red {
+  background-color: $color-hs-red;
+  color: $color-hs-white;
+}
+
+.bg-beige {
+  background-color: $color-hs-beige;
+  color: $color-hs-red;
+}
+
+.bg-blue {
+  background-color: $color-hs-blue;
+  color: $color-hs-white;
+}
+
+.bg-black {
+  background-color: $color-hs-black;
+  color: $color-hs-white;
+}
+
+.bg-white {
+  background-color: $color-hs-white;
+  color: $color-hs-black;
+  a {
+    color: $color-hs-black;
+    pointer-events: all;
+  }
+}
+
+/** TEXT */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-title;
+  font-weight: normal;
+  clear: both;
+  padding: 0;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 6em;
+}
+
+h2 {
+  font-size: 2.0em;
+}
+
+h3 {
+  font-size: 1.4em;
+  margin-bottom: 0.7em;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+/** LINKS */
+
+a {
+  color: #fff;
+}
+
+a:visited {
+  opacity: 0.6;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/** ELEMENTS */
+
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+/** IMG **/
+
+img {
+    height: auto;
+    max-width: 100%;
+    border: 0;
+}
+
+/** Alignments */
+
+.align-left {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+.align-right {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+.align-center {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/** CLEAR */
+
+.clear:before,
+.clear:after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+.clear:after {
+  clear: both;
+}

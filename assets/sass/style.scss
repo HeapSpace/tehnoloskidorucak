@@ -1,0 +1,19 @@
+@import "reset";
+@import "variables";
+@import "common";
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 1120px) 1fr;
+  grid-gap: 1em;
+  padding: 4em 0;
+}
+
+.content-wrap {
+  grid-column: 2;
+  font-size: 2em;
+  line-height: 1.2;
+}
+
+@import "index";
+@import "footer";

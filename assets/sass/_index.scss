@@ -1,0 +1,30 @@
+.boxes {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 10px;
+  margin: 6em 0;
+}
+
+.box {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+h1#title {
+	font-size: 4em;
+}
+
+h3.date {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+ul.talks {
+  margin: 2em 0;
+
+  li {
+  	font-size: 0.7em;
+  	margin-top: 20px;
+  	letter-spacing: -2px;
+  }
+}
