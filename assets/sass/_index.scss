@@ -8,6 +8,7 @@
 .box {
   border-radius: 5px;
   padding: 20px;
+  position: relative;
 }
 
 h1#title {
@@ -17,6 +18,9 @@ h1#title {
   margin-bottom: 1em;
 }
 
+h2.town {
+  white-space: nowrap;
+}
 h3.date {
   margin-top: 40px;
   margin-bottom: 0;
@@ -36,4 +40,9 @@ ul.talks {
       margin-right: 10px;
     }
   }
+}
+
+div.meetup {
+  position: absolute;
+  bottom: 10px;
 }
