@@ -1,8 +1,8 @@
 .boxes {
   display: grid;
-  grid-template-columns: 30% 30% 30%;
+  grid-template-columns: 33% 33% 33%;
   grid-gap: 10px;
-  margin: 6em 0;
+  margin: 6em 0 3em 0;
 }
 
 .box {
@@ -12,6 +12,9 @@
 
 h1#title {
 	font-size: 4em;
+  line-height: 0.9em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 h3.date {
@@ -26,5 +29,11 @@ ul.talks {
   	font-size: 0.7em;
   	margin-top: 20px;
   	letter-spacing: -2px;
+    span {
+      font-size: 0.8em;
+      position:relative;
+      top: 0;
+      margin-right: 10px;
+    }
   }
 }

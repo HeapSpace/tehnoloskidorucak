@@ -5,15 +5,17 @@
 	Doručak
 </h1>
 
+{{ .Content }}
+
 <div class="boxes">
   <div class="box bg-red">
   	<h2 class="town">beograd</h2>
-  	<h3 class="date">06. 09.</h3>
+  	<h3 class="date">{{ .Params.bgd_date }}</h3>
   	<h4>ICT HUB</h4>
 		<ul class="talks">
-			<li>{ Creative Brackets }</li>
-			<li>Krojačeva škola</li>
-			<li>Tema 3</li>
+      {{ range .Params.bgd_talks }}
+        <li><span>⬣</span>{{ . }}</li>
+      {{ end }}
 		</ul>
     <a class="meetup" href="http://meetup">RSVP</a>
   </div>

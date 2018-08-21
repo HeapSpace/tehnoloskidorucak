@@ -184,3 +184,20 @@ img {
 .clear:after {
   clear: both;
 }
+
+/** INPUT */
+
+button, input {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+  font-size: 100%;
+   line-height: 1.15;
+   margin: 0;
+}
+
+/** LISTS */
+
+ul {
+  margin: 40px 0;
+}
