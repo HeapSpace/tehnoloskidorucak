@@ -1,13 +1,22 @@
-@media screen and (max-width: 1340px) {
-}
-
-@media screen and (max-width: 768px) {
-	.flex {
-		flex-direction: column;
-	}
+@media screen and (max-width: 1000px) {
 	.boxes {
 		display: grid;
 		grid-template-columns: 100%;
+	}
+	h1#title {
+		margin: 0.6em 0;
+	}
+	h3.date {
+		margin:0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	body {
+		font-size: 0.9em;
+	}
+	.boxes {
+		margin: 2em 0;
 	}
 }
 
@@ -17,5 +26,13 @@
 	}
 	.content-wrap {
 		padding: 0;
+	}
+	h1#title {
+		font-size: 2em;
+		margin: 0.5em 0;
+	}
+	p {
+		font-size: 0.8em;
+		line-height: 1.1em;
 	}
 }
