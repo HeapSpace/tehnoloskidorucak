@@ -13,6 +13,12 @@
 	ul.talks {
 		margin: 1em 0 2em 0;
 	}
+	.strafta {
+		padding: 0;
+	}
+	p {
+		padding: 0 1em;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -21,6 +27,12 @@
 	}
 	.boxes {
 		margin: 2em 0;
+	}
+	header {
+		grid-template-columns: 130px 1fr;
+		h1 {
+			font-size: 2em;
+		}
 	}
 }
 
@@ -31,9 +43,13 @@
 	.content-wrap {
 		padding: 0;
 	}
-	h1#title {
-		font-size: 2em;
-		margin: 0.5em 0;
+	header {
+		grid-template-columns: 120px 1fr;
+		grid-gap:10px;
+		h1 {
+			font-size: 2em;
+			margin: 0.5em 0;
+		}
 	}
 	p {
 		font-size: 0.8em;

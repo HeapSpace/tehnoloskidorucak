@@ -1,14 +1,11 @@
 header {
 	display: grid;
 	grid-template-columns: 200px 1fr;
-	margin-top: 1em;
 	grid-gap: 40px;
-	padding: 3em 1em 2em 1em;
+	padding: 2em 1em 2em 1em;
 	background-color: $color-hs-beige;
 	img {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+ 		margin: auto;
 	}
 	h1 {
 		font-size: 3em;

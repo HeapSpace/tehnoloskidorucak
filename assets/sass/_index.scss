@@ -45,7 +45,12 @@ body {
   background-repeat: no-repeat;
   background-origin: content-box;
   background-size: 100% 100%;
-  //background-attachment: fixed;
-  background-position: center center;
-  //background-position: center -600px;
+  background-attachment: fixed;
+  background-position: center -600px;
+  padding-top: 300px;
+}
+
+.strafta {
+  background-color: $color-hs-beige;
+  padding: 1em;
 }
