@@ -16,19 +16,25 @@
 	.strafta {
 		padding: 0;
 	}
-	p {
+	main p {
 		padding: 0 1em;
 	}
 }
 
 @media screen and (max-width: 768px) {
 	body {
+		background: none;
 		font-size: 0.9em;
+		padding-top: 0;
+	}
+	grid {
+		padding:0;
 	}
 	.boxes {
 		margin: 2em 0;
 	}
 	header {
+		padding: 0 1em;
 		grid-template-columns: 130px 1fr;
 		h1 {
 			font-size: 2em;
@@ -37,22 +43,25 @@
 }
 
 @media screen and (max-width: 600px) {
-	body {
-		font-size: 0.8em;
-	}
 	.content-wrap {
 		padding: 0;
 	}
 	header {
-		grid-template-columns: 120px 1fr;
+		grid-template-columns: 80px 1fr;
 		grid-gap:10px;
 		h1 {
-			font-size: 2em;
+			font-size: 1.4em;
 			margin: 0.5em 0;
 		}
 	}
 	p {
 		font-size: 0.8em;
 		line-height: 1.1em;
+	}
+	main.grid {
+		padding: 1em 0;
+	}
+	footer.grid {
+		padding: 2em 1em;
 	}
 }
