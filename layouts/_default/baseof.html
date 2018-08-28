@@ -13,10 +13,11 @@
 		{{ partial "head" . }}
     </head>
     <body class="bg-beige">
-    	{{ partial "header" . }}
 
     	<main class="grid">
-  			<div class="content-wrap">
+  			<div class="content-wrap bg-beige">
+
+		{{ partial "header" . }}
 
 		{{ block "main" . }}{{ end }}
 

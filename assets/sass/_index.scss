@@ -11,13 +11,6 @@
   position: relative;
 }
 
-h1#title {
-	font-size: 4em;
-  line-height: 0.9em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
 h2.town {
   white-space: nowrap;
 }
@@ -44,5 +37,15 @@ ul.talks {
 
 div.meetup {
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
+}
+
+body {
+  background-image: url(/td-back.png);
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: 100% 100%;
+  //background-attachment: fixed;
+  background-position: center center;
+  //background-position: center -600px;
 }

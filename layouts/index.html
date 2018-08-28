@@ -1,19 +1,14 @@
 {{ define "main" }}
 
-<h1 id="title">
-	Tehnološki<br>
-	Doručak
-</h1>
-
 {{ .Content }}
 
 <div class="boxes">
 
   {{ partial "box" (dict "town" "beograd" "date" .Params.bgd_date "talks" .Params.bgd_talks "link" .Params.bgd_link "color" "bg-red" "location" "ICT HUB") }}
 
-  {{ partial "box" (dict "town" "novi sad" "date" .Params.ns_date "talks" .Params.ns_talks "link" .Params.ns_link "color" "bg-blue" "location" "STARTIT") }}
+  {{ partial "box" (dict "town" "zagreb" "date" .Params.zgb_date "talks" .Params.zgb_talks "link" .Params.zgb_link "color" "bg-blue" "location" "HUB385") }}
 
-  {{ partial "box" (dict "town" "zagreb" "date" .Params.zgb_date "talks" .Params.zgb_talks "link" .Params.zgb_link "color" "bg-black" "location" "HUB385") }}
+  {{ partial "box" (dict "town" "novi sad" "date" .Params.ns_date "talks" .Params.ns_talks "link" .Params.ns_link "color" "bg-black" "location" "STARTIT") }}
 
 </div>
 
