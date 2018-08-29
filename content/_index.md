@@ -9,12 +9,12 @@ bgd_talks:
 bgd_link: "https://www.meetup.com/Heapspace/events/254168228/"
 ns_date: "26. 09."
 ns_talks:
-  - {name: "30secondsofcode", link: "#"}
+  - {name: "30secondsofcode", link: "https://30secondsofcode.org"}
 ns_link: "#"
 zgb_date: "16. 09."
 zgb_talks:
-  - {name: "Foodie nutrition", link: "#"}
-  - {name: "TalentLyft", link: "#"}
+  - {name: "Foodie nutrition", link: "https://foodie-nutrition.com"}
+  - {name: "TalentLyft", link: "https://www.talentlyft.com/"}
 zgb_link: "#"
 ---
 

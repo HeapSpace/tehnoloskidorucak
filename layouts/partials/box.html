@@ -9,7 +9,10 @@
 		</ul>
 
       <div class="meetup">
-        <a href="{{ .link }}">Dolaziš?</a>
+        {{ if (eq .link "#") }}
+        {{ else }}
+          <a href="{{ .link }}">Dolaziš?</a>
+        {{ end }}
       </div>
 
   </div>
