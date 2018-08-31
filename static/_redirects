@@ -1,0 +1,2 @@
+# Redirect domain aliases to primary domain
+https://tehnoloskidorucak.rs/* https://tehnoloskidorucak.io/:splat 301!
