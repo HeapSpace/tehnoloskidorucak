@@ -7,17 +7,17 @@ bgd_talks:
   - {name: "Paušal", link: "http://www.pausal.rs/"}
   - {name: "Tech Genius", link: "https://huaweiforum.si/technical-genius"}
 bgd_link: "https://www.meetup.com/Heapspace/events/254168228/"
+zgb_date: "19. 09."
+zgb_talks:
+  - {name: "Foodie nutrition", link: "https://foodie-nutrition.com"}
+  - {name: "TalentLyft", link: "https://www.talentlyft.com/"}
+  - {name: "DiVan", link: "http://www.divan.hr/"}
+zgb_link: "#"
 ns_date: "26. 09."
 ns_talks:
   - {name: "30secondsofcode", link: "https://30secondsofcode.org"}
   - {name: "Content Insights", link: "https://contentinsights.com"}
 ns_link: "#"
-zgb_date: "16. 09."
-zgb_talks:
-  - {name: "Foodie nutrition", link: "https://foodie-nutrition.com"}
-  - {name: "TalentLyft", link: "https://www.talentlyft.com/"}
-  - {name: "Divan", link: "http://www.divan.hr/"}
-zgb_link: "#"
 ---
 
 Mesečno okupljanje sa ciljem brze razmene preduzetničkih ideja u prijatnoj atmosferi prve jutarnje kafe.
