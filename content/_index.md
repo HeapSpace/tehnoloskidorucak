@@ -12,6 +12,7 @@ zgb_talks:
   - {name: "Foodie nutrition", link: "https://foodie-nutrition.com"}
   - {name: "TalentLyft", link: "https://www.talentlyft.com/"}
   - {name: "DiVan", link: "http://www.divan.hr/"}
+  - {name: "WePark", link: "http://wepark.eu"}
 zgb_link: "#"
 ns_date: "26. 09."
 ns_talks:
