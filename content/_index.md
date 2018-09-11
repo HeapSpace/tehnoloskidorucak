@@ -13,7 +13,7 @@ zgb_talks:
   - {name: "TalentLyft", link: "https://www.talentlyft.com/"}
   - {name: "DiVan", link: "http://www.divan.hr/"}
   - {name: "WePark", link: "http://wepark.eu"}
-zgb_link: "#"
+zgb_link: "https://www.meetup.com/Heapspace/events/254577135/"
 ns_date: "26. 09."
 ns_talks:
   - {name: "30secondsofcode", link: "https://30secondsofcode.org"}
