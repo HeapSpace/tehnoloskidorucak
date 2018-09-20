@@ -19,7 +19,7 @@ ns_talks:
   - {name: "30secondsofcode", link: "https://30secondsofcode.org"}
   - {name: "Content Insights", link: "https://contentinsights.com"}
   - {name: "Reportz", link: "https://reportz.io"}
-ns_link: "#"
+ns_link: "https://www.meetup.com/Heapspace/events/254850419/"
 ---
 
 Mesečno okupljanje sa ciljem brze razmene preduzetničkih ideja u prijatnoj atmosferi prve jutarnje kafe.
