@@ -14,12 +14,8 @@ zgb_date: 24. 10.
 zgb_talks: []
 zgb_link: ''
 ns_date: 31. 10.
-ns_talks:
-- name: ActiveCollab
-  link: https://activecollab.com/
-- name: Content Insights
-  link: https://contentinsights.com
-ns_link: https://www.meetup.com/Heapspace/events/254850419/
+ns_talks: []
+ns_link: ''
 
 ---
 Mesečno okupljanje sa ciljem brze razmene preduzetničkih ideja u prijatnoj atmosferi prve jutarnje kafe.
