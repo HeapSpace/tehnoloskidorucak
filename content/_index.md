@@ -1,5 +1,5 @@
 ---
-bgd_date: 05. 09.
+bgd_date: 03. 10.
 bgd_talks:
 - name: Katarina Stanković
   link: http://www.centarzatalente.com/
@@ -9,26 +9,16 @@ bgd_talks:
   link: http://www.centarzatalente.com/
 - name: Sara Milošević
   link: http://www.centarzatalente.com/
-bgd_link: https://www.meetup.com/Heapspace/events/254168228/
-zgb_date: 19. 09.
-zgb_talks:
-- name: Foodie nutrition
-  link: https://foodie-nutrition.com
-- name: TalentLyft
-  link: https://www.talentlyft.com/
-- name: DiVan
-  link: http://www.divan.hr/
-- name: WePark
-  link: http://wepark.eu
-zgb_link: https://www.meetup.com/Heapspace/events/254577135/
-ns_date: 26. 09.
+bgd_link: ''
+zgb_date: 24. 10.
+zgb_talks: []
+zgb_link: ''
+ns_date: 31. 10.
 ns_talks:
-- name: 30secondsofcode
-  link: https://30secondsofcode.org
+- name: ActiveCollab
+  link: https://activecollab.com/
 - name: Content Insights
   link: https://contentinsights.com
-- name: Reportz
-  link: https://reportz.io
 ns_link: https://www.meetup.com/Heapspace/events/254850419/
 
 ---
