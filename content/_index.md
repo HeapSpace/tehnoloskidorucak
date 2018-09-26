@@ -7,8 +7,8 @@ bgd_talks:
   link: http://www.centarzatalente.com/
 - name: Uroš Filipović
   link: http://www.centarzatalente.com/
-- name: Paušal
-  link: http://www.pausal.rs/
+- name: Sara Milošević
+  link: http://www.centarzatalente.com/
 bgd_link: https://www.meetup.com/Heapspace/events/254168228/
 zgb_date: 19. 09.
 zgb_talks:
