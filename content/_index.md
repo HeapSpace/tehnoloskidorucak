@@ -3,8 +3,8 @@ bgd_date: 05. 09.
 bgd_talks:
 - name: Katarina Stanković
   link: http://www.centarzatalente.com/
-- name: Solagro
-  link: http://www.solagroteam.com/
+- name: Todor Cvetanović
+  link: http://www.centarzatalente.com/
 - name: Contatto
   link: http://www.contatto.rs/
 - name: Paušal
