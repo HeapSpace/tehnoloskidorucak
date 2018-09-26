@@ -5,12 +5,10 @@ bgd_talks:
   link: http://www.centarzatalente.com/
 - name: Todor Cvetanović
   link: http://www.centarzatalente.com/
-- name: Contatto
-  link: http://www.contatto.rs/
+- name: Uroš Filipović
+  link: http://www.centarzatalente.com/
 - name: Paušal
   link: http://www.pausal.rs/
-- name: Tech Genius
-  link: https://huaweiforum.si/technical-genius
 bgd_link: https://www.meetup.com/Heapspace/events/254168228/
 zgb_date: 19. 09.
 zgb_talks:
