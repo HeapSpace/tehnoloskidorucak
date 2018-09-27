@@ -17,6 +17,8 @@ ns_date: 31. 10.
 ns_talks:
 - name: ActiveCollab
   link: https://activecollab.com/
+- name: Smart Watering
+  link: https://www.smartwatering.rs/
 ns_link: "#"
 
 ---
