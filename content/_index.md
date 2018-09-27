@@ -14,7 +14,9 @@ zgb_date: 24. 10.
 zgb_talks: []
 zgb_link: Kuva se...
 ns_date: 31. 10.
-ns_talks: []
+ns_talks:
+- name: ActiveCollab
+  link: https://activecollab.com/
 ns_link: Kuva se...
 
 ---
