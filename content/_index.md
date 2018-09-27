@@ -9,7 +9,7 @@ bgd_talks:
   link: http://www.centarzatalente.com/
 - name: Sara Milošević
   link: http://www.centarzatalente.com/
-bgd_link: "#"
+bgd_link: https://www.meetup.com/Heapspace/events/255058387/
 zgb_date: 24. 10.
 zgb_talks: []
 zgb_link: "#"
