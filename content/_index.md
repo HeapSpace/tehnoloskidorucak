@@ -6,6 +6,8 @@ zgb_date: 24. 10.
 zgb_talks:
 - name: Nogosh
   link: https://nogosh.com/
+- name: Cinderella
+  link: http://ag04.com/event-social-network/
 zgb_link: "#"
 ns_date: 31. 10.
 ns_talks:
