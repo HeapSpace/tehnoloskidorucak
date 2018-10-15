@@ -1,5 +1,5 @@
 ---
-bgd_date: 03. 10.
+bgd_date: 07. 11.
 bgd_talks: []
 bgd_link: "#"
 zgb_date: 24. 10.
