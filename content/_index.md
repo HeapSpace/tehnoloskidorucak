@@ -10,6 +10,8 @@ zgb_talks:
   link: http://ag04.com/event-social-network/
 - link: http://www.eventa01.com/
   name: EVENTA01
+- name: Gamechuck
+  link: https://www.game-chuck.com/
 zgb_link: "#"
 ns_date: 31. 10.
 ns_talks:
