@@ -8,6 +8,8 @@ zgb_talks:
   link: https://nogosh.com/
 - name: Cinderella
   link: http://ag04.com/event-social-network/
+- link: http://www.eventa01.com/
+  name: EVENTA01
 zgb_link: "#"
 ns_date: 31. 10.
 ns_talks:
