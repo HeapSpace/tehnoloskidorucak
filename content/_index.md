@@ -8,8 +8,8 @@ zgb_talks:
   link: https://nogosh.com/
 - name: Cinderella
   link: http://ag04.com/event-social-network/
-- link: http://www.eventa01.com/
-  name: EVENTA01
+- link: http://www.sightrun.com/
+  name: Sightrun
 - name: Gamechuck
   link: https://www.game-chuck.com/
 zgb_link: "#"
