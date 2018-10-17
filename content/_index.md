@@ -9,7 +9,7 @@ zgb_talks:
 - name: Cinderella
   link: http://ag04.com/event-social-network/
 - link: http://www.sightrun.com/
-  name: Sightrun
+  name: SightRun
 - name: Gamechuck
   link: https://www.game-chuck.com/
 zgb_link: "#"
