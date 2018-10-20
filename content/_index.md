@@ -12,7 +12,7 @@ zgb_talks:
   name: SightRun
 - name: Gamechuck
   link: https://www.game-chuck.com/
-zgb_link: "#"
+zgb_link: https://www.meetup.com/Heapspace/events/bchmkqyxnbgc/
 ns_date: 31. 10.
 ns_talks:
 - name: ActiveCollab
