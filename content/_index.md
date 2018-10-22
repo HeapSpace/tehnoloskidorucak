@@ -10,7 +10,7 @@ zgb_talks:
   link: http://ag04.com/event-social-network/
 - link: http://www.sightrun.com/
   name: SightRun
-- name: Gamechuck
+- name: GameChuck
   link: https://www.game-chuck.com/
 zgb_link: https://www.meetup.com/Heapspace/events/bchmkqyxnbgc/
 ns_date: 31. 10.
