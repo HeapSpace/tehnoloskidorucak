@@ -19,6 +19,8 @@ ns_talks:
   link: https://activecollab.com/
 - name: Smart Watering
   link: https://www.smartwatering.rs/
+- name: 'Danilo Novaković '
+  link: https://dafed.org/
 - name: Espree Devora
   link: http://espreedevora.com/
 ns_link: "#"
