@@ -23,7 +23,7 @@ ns_talks:
   link: https://dafed.org/
 - name: Espree Devora
   link: http://espreedevora.com/
-ns_link: "#"
+ns_link: https://www.meetup.com/Heapspace/events/255825214/
 
 ---
 Mesečno okupljanje sa ciljem brze razmene preduzetničkih ideja u prijatnoj atmosferi prve jutarnje kafe.
