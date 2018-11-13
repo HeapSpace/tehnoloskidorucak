@@ -8,6 +8,8 @@ zgb_talks:
   link: http://www.sightrun.com/
 - name: Smart Lummies
   link: https://www.smartlumies.com/
+- link: http://glook.me/gocoin/
+  name: GO:COIN
 zgb_link: "#"
 ns_date: 19. 12.
 ns_talks: []
