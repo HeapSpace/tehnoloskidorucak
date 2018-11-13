@@ -6,6 +6,8 @@ zgb_date: 5.12.
 zgb_talks:
 - name: SightRun
   link: http://www.sightrun.com/
+- name: Smart Lummies
+  link: https://www.smartlumies.com/
 zgb_link: "#"
 ns_date: 19. 12.
 ns_talks: []
