@@ -3,9 +3,11 @@ bgd_date: 5.12.
 bgd_talks: []
 bgd_link: "#"
 zgb_date: 5.12.
-zgb_talks: []
+zgb_talks:
+- name: SightRun
+  link: http://www.sightrun.com/
 zgb_link: "#"
-ns_date: "?. 12."
+ns_date: 19. 12.
 ns_talks: []
 ns_link: "#"
 
