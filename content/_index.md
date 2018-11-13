@@ -1,6 +1,8 @@
 ---
 bgd_date: 5.12.
-bgd_talks: []
+bgd_talks:
+- name: 'BalkanViator '
+  link: https://www.balkanviator.com/en/
 bgd_link: "#"
 zgb_date: 5.12.
 zgb_talks:
