@@ -1,7 +1,7 @@
 ---
 bgd_date: 5.12.
 bgd_talks:
-- name: archPLAY
+- name: archPLAYer
   link: https://archiplay.rs/
 - name: 'BalkanViator '
   link: https://www.balkanviator.com/en/
