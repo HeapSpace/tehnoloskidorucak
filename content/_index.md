@@ -15,7 +15,7 @@ zgb_talks:
 - link: http://glook.me/gocoin/
   name: GO:COIN
 zgb_link: "#"
-ns_date: 19. 12.
+ns_date: "?. 12."
 ns_talks: []
 ns_link: "#"
 
