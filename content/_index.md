@@ -1,6 +1,8 @@
 ---
 bgd_date: 5.12.
 bgd_talks:
+- name: All Things Talk
+  link: https://www.allthingstalk.com/
 - name: archPLAY
   link: https://archiplay.rs/
 - name: 'BalkanViator '
