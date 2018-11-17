@@ -1,14 +1,14 @@
 ---
 bgd_date: 5.12.
 bgd_talks:
-- name: Matori
-  link: https://matori.rs/
 - name: All Things Talk
   link: https://www.allthingstalk.com/
 - name: archPLAY
   link: https://archiplay.rs/
 - name: 'BalkanViator '
   link: https://www.balkanviator.com/en/
+- name: Matori
+  link: https://matori.rs/
 bgd_link: "#"
 zgb_date: 5.12.
 zgb_talks:
