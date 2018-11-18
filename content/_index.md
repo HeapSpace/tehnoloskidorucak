@@ -14,7 +14,7 @@ zgb_date: 5.12.
 zgb_talks:
 - name: SightRun
   link: http://www.sightrun.com/
-- name: Smart Lummies
+- name: Smart Lumies
   link: https://www.smartlumies.com/
 - link: http://glook.me/gocoin/
   name: GO:COIN
