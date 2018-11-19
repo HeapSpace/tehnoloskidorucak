@@ -6,7 +6,7 @@
 
 ### Deploy settings
 
-+ `Build&Deploy > Build command` : `build.sh`
++ `Build&Deploy > Build command` : `./build.sh`
 
 ### Build environment variables
 
