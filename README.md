@@ -7,11 +7,17 @@
 Put the following in `./.env` file:
 
 ```bash
-readonly API_TOKEN=<your_token>
+readonly AIRTABLE_TOKEN=<your_token>
 ```
 
-## Netlify changes
+## Netlify configuration
 
 ### Deploy settings
 
-+ `Build&Deploy > Build command` : `./hugo.sh`
++ `Build command` : `./hugo.sh`
+
+### Build environment variables
+
++ `AIRTABLE_TOKEN`
++ `WEBHOOK_ID`
++ `DEPLOY_PASSWORD`
