@@ -7,6 +7,8 @@ bgd_talks:
   link: https://archiplay.rs/
 - name: BalkanVIATOR
   link: https://www.balkanviator.com/en/
+- name: 'Čedolino '
+  link: http://www.cedolinohealthysweets.com/
 - name: Matori
   link: https://matori.rs/
 bgd_link: "#"
