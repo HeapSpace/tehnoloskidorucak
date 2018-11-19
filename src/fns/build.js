@@ -16,7 +16,7 @@ exports.handler = async (event, context) => {
   return fetch(API_ENDPOINT, { method: 'POST' })
     .then(data => ({
       statusCode: 200,
-      body: data
+      body: 'Ok.Go.'
     }))
     .catch(error => ({ statusCode: 422, body: String(error) }));
 };

@@ -13,8 +13,9 @@
 
 		{{ $style := resources.Get "sass/style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 		<link rel='stylesheet' href='{{ $style.RelPermalink }}' type='text/css' media='all' />
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-		{{ partial "head" . }}
+		{{ block "head" . }}{{ end }}
     </head>
     <body class="bg-beige">
 
