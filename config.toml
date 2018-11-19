@@ -1,5 +1,3 @@
 baseURL = "https://tehnoloskidorucak.io/"
 languageCode = "sr-RS"
 title = "Tehnološki Doručak"
-
-functions = "./fns"
