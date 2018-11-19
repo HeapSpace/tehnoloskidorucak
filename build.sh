@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
-readonly tdfns="https://tehnoloskidorucak.io/.netlify/functions"
+include () {
+    [[ -f "$1" ]] && source "$1"
+}
 
-curl "$tdfns/fetchMeetups" -o data/Meetups.json
+include ".env"
+
+readonly airtable="https://api.airtable.com/v0/appNUbQdF6KjbUOHy"
+
+curl "$airtable/Meetups?api_key=$API_TOKEN" -o data/Meetups.json
 
 hugo "$@"
