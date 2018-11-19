@@ -2,7 +2,6 @@
 
 [tehnoloskidorucak.io](https://tehnoloskidorucak.io)
 
-
 ## Build
 
 Put the following in `./.env` file:
@@ -15,4 +14,4 @@ readonly API_TOKEN=<your_token>
 
 ### Deploy settings
 
-+ `Build&Deploy > Build command` : `./build.sh`
++ `Build&Deploy > Build command` : `./hugo.sh`
