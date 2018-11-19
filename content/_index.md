@@ -5,7 +5,7 @@ bgd_talks:
   link: https://www.allthingstalk.com/
 - name: archPLAY
   link: https://archiplay.rs/
-- name: 'BalkanViator '
+- name: BalkanVIATOR
   link: https://www.balkanviator.com/en/
 - name: Matori
   link: https://matori.rs/
