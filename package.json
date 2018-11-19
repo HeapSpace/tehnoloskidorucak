@@ -1,0 +1,26 @@
+{
+  "name": "tehnoloskidorucak",
+  "version": "1.0.0",
+  "description": "[tehnoloskidorucak.io](https://tehnoloskidorucak.io)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:fns": "netlify-lambda serve src/fns",
+    "build:fns": "netlify-lambda build src/fns"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeapSpace/tehnoloskidorucak.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISD",
+  "bugs": {
+    "url": "https://github.com/HeapSpace/tehnoloskidorucak/issues"
+  },
+  "homepage": "https://github.com/HeapSpace/tehnoloskidorucak#readme",
+  "dependencies": {
+    "netlify-lambda": "^1.0.3",
+    "node-fetch": "^2.3.0"
+  }
+}
