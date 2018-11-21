@@ -11,20 +11,20 @@ bgd_talks:
   link: http://www.cedolinohealthysweets.com/
 - name: Matori
   link: https://matori.rs/
-bgd_link: "#"
+bgd_link: https://www.meetup.com/Heapspace/events/256592041/
 zgb_date: 5.12.
 zgb_talks:
-- name: OmoType
-  link: https://omotype.com
 - name: TransferHero
   link: https://www.transferhero.eu
 - name: SightRun
   link: http://www.sightrun.com/
-- name: Smart Lumies
-  link: https://www.smartlumies.com/
 - link: http://glook.me/gocoin/
   name: GO:COIN
-zgb_link: "#"
+- name: OmoType
+  link: https://omotype.com
+- name: Smart Lumies
+  link: https://www.smartlumies.com/
+zgb_link: https://www.meetup.com/Heapspace/events/256592278/
 ns_date: "?. 12."
 ns_talks: []
 ns_link: "#"
