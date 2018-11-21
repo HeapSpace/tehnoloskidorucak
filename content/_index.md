@@ -14,6 +14,8 @@ bgd_talks:
 bgd_link: "#"
 zgb_date: 5.12.
 zgb_talks:
+- name: TransferHero
+  link: https://www.transferhero.eu
 - name: SightRun
   link: http://www.sightrun.com/
 - name: Smart Lumies
