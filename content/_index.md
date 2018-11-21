@@ -21,7 +21,7 @@ zgb_talks:
 - link: http://glook.me/gocoin/
   name: GO:COIN
 - name: OmoType
-  link: https://omotype.com
+  link: https://omolab.com/
 - name: Smart Lumies
   link: https://www.smartlumies.com/
 zgb_link: https://www.meetup.com/Heapspace/events/256592278/
