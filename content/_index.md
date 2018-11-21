@@ -20,7 +20,7 @@ zgb_talks:
   link: http://www.sightrun.com/
 - link: http://glook.me/gocoin/
   name: GO:COIN
-- name: OmoType
+- name: OmoLab
   link: https://omolab.com/
 - name: Smart Lumies
   link: https://www.smartlumies.com/
