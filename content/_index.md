@@ -14,6 +14,8 @@ bgd_talks:
 bgd_link: "#"
 zgb_date: 5.12.
 zgb_talks:
+- name: OmoType
+  link: https://omotype.com
 - name: TransferHero
   link: https://www.transferhero.eu
 - name: SightRun
