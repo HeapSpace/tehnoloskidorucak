@@ -25,7 +25,7 @@ zgb_talks:
 - name: Smart Lumies
   link: https://www.smartlumies.com/
 zgb_link: https://www.meetup.com/Heapspace/events/256592278/
-ns_date: "?. 12."
+ns_date: 18. 12.
 ns_talks: []
 ns_link: "#"
 
