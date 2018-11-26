@@ -30,15 +30,15 @@ const presentersZG = presenters.records.filter(x =>
 // Match locations with regions
 const locationBEG = locations.records.filter(x =>
   x.fields.Meetups.includes(meetupsInBEG[0].id)
-)[0].fields.Name;
+)[0].fields['Display name'];
 
 const locationNS = locations.records.filter(x =>
   x.fields.Meetups.includes(meetupsInNS[0].id)
-)[0].fields.Name;
+)[0].fields['Display name'];
 
 const locationZG = locations.records.filter(x =>
   x.fields.Meetups.includes(meetupsInZG[0].id)
-)[0].fields.Name;
+)[0].fields['Display name'];
 
 const upcomingMeetups = {
   BEG: {
@@ -76,5 +76,5 @@ function formatDate(date) {
   const dateParts = date.split('-');
   const month = Number(dateParts[1]);
   const day = Number(dateParts[2]);
-  return `${day}.${month}`;
+  return `${day}.${month}.`;
 }
