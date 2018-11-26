@@ -9,57 +9,44 @@ const sortedMeetups = meetups.records.sort(function(a, b) {
   return a > b ? -1 : a < b ? 1 : 0;
 });
 
-// Filter out meetups by cities;
-const meetupsInBEG = sortedMeetups.filter(x => x.fields.Region.includes('BEG'));
-const meetupsInNS = sortedMeetups.filter(x => x.fields.Region.includes('NS'));
-const meetupsInZG = sortedMeetups.filter(x => x.fields.Region.includes('ZG'));
+// Collect regions from locations
+const regions = [];
+locations.records.forEach(r => {
+  regions.push(r.fields.Region);
+});
+
+// Filter out meetups by cities
+const meetupsIn = {};
+regions.forEach(r => {
+  meetupsIn[r] = sortedMeetups.filter(x => x.fields.Region.includes(r));
+});
 
 // Match upcoming meetups with presenters
-const presentersBEG = presenters.records.filter(x =>
-  x.fields.Meetup.includes(meetupsInBEG[0].id)
-);
-
-const presentersNS = presenters.records.filter(x =>
-  x.fields.Meetup.includes(meetupsInNS[0].id)
-);
-
-const presentersZG = presenters.records.filter(x =>
-  x.fields.Meetup.includes(meetupsInZG[0].id)
-);
+const presentersIn = {};
+regions.forEach(r => {
+  presentersIn[r] = presenters.records.filter(x =>
+    x.fields.Meetup.includes(meetupsIn[r][0].id)
+  );
+});
 
 // Match locations with regions
-const locationBEG = locations.records.filter(x =>
-  x.fields.Meetups.includes(meetupsInBEG[0].id)
-)[0].fields['Display name'];
+const locationsIn = {};
+regions.forEach(r => {
+  locationsIn[r] = locations.records.filter(x =>
+    x.fields.Meetups.includes(meetupsIn[r][0].id)
+  )[0].fields['Display name'];
+});
 
-const locationNS = locations.records.filter(x =>
-  x.fields.Meetups.includes(meetupsInNS[0].id)
-)[0].fields['Display name'];
-
-const locationZG = locations.records.filter(x =>
-  x.fields.Meetups.includes(meetupsInZG[0].id)
-)[0].fields['Display name'];
-
-const upcomingMeetups = {
-  BEG: {
-    date: formatDate(meetupsInBEG[0].fields.Date),
-    url: meetupsInBEG[0].fields.URL || '#',
-    presenters: sortAlphabetically(presentersBEG),
-    location: locationBEG
-  },
-  NS: {
-    date: formatDate(meetupsInNS[0].fields.Date),
-    url: meetupsInNS[0].fields.URL || '#',
-    presenters: sortAlphabetically(presentersNS),
-    location: locationNS
-  },
-  ZG: {
-    date: formatDate(meetupsInZG[0].fields.Date),
-    url: meetupsInZG[0].fields.URL || '#',
-    presenters: sortAlphabetically(presentersZG),
-    location: locationZG
+// Build resulting object
+const upcomingMeetups = {}
+regions.forEach(r => {
+  upcomingMeetups[r] = {
+    date: formatDate(meetupsIn[r][0].fields.Date),
+    url: meetupsIn[r][0].fields.URL || '#',
+    presenters: sortAlphabetically(presentersIn[r]),
+    location: locationsIn[r]
   }
-};
+});
 
 module.exports = upcomingMeetups;
 
@@ -71,7 +58,7 @@ function sortAlphabetically(array) {
   });
 }
 
-// '2018-12-05' -> 5.12
+// Format date: '2018-12-05' -> 5.12.
 function formatDate(date) {
   const dateParts = date.split('-');
   const month = Number(dateParts[1]);
