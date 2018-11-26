@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/HeapSpace/tehnoloskidorucak#readme",
   "dependencies": {
+    "airtable": "^0.5.7",
     "netlify-lambda": "^1.0.3",
     "node-fetch": "^2.3.0"
   }
