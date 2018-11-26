@@ -1,13 +1,13 @@
 const fs = require('fs');
 
-const upcomingMeetups = require('./scripts/generateUpcomingMeetups');
+const upcomingMeetupsName = 'UpcomingMeetups';
+const upcomingMeetups = require('./scripts/generate' + upcomingMeetupsName);
 
-// generate upcomingMeetups.json from formated data
 fs.writeFile(
-  './data/UpcomingMeetups.json',
+  `./data/${upcomingMeetupsName}.json`,
   JSON.stringify(upcomingMeetups),
   function(err) {
     if (err) return console.log(err);
-    console.log('Successfully generated upcomingMeetups.json file');
+    console.log(`Successfully generated ${upcomingMeetupsName}.json file`);
   }
 );
