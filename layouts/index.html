@@ -3,13 +3,11 @@
 {{ .Content }}
 
 <div class="boxes">
+  {{ partial "box" (dict "town" "beograd" "date" .Site.Data.UpcomingMeetups.BEG.date "talks" .Params.bgd_talks "link" .Site.Data.UpcomingMeetups.BEG.url "color" "bg-red" "location" .Site.Data.UpcomingMeetups.BEG.location) }}
 
-  {{ partial "box" (dict "town" "beograd" "date" .Params.bgd_date "talks" .Params.bgd_talks "link" .Params.bgd_link "color" "bg-red" "location" "ICT HUB") }}
+  {{ partial "box" (dict "town" "zagreb" "date" .Site.Data.UpcomingMeetups.ZG.date "talks" .Params.zgb_talks "link" .Site.Data.UpcomingMeetups.ZG.url "color" "bg-blue" "location" .Site.Data.UpcomingMeetups.ZG.location) }}
 
-  {{ partial "box" (dict "town" "zagreb" "date" .Params.zgb_date "talks" .Params.zgb_talks "link" .Params.zgb_link "color" "bg-blue" "location" "HUB385") }}
-
-  {{ partial "box" (dict "town" "novi sad" "date" .Params.ns_date "talks" .Params.ns_talks "link" .Params.ns_link "color" "bg-black" "location" "P R O S T O R") }}
-
+  {{ partial "box" (dict "town" "novi sad" "duate" .Site.Data.UpcomingMeetups.NS.date "talks" .Params.ns_talks "link" .Site.Data.UpcomingMeetups.NS.url "color" "bg-black" "location" .Site.Data.UpcomingMeetups.NS.location) }}
 </div>
 
 {{ end }}

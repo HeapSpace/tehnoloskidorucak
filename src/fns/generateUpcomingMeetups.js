@@ -1,8 +1,8 @@
 const fs = require('fs');
 
-const meetups = require('./Meetups.json');
-const presenters = require('./Presenters.json');
-const locations = require('./Locations.json');
+const meetups = require('../../data/Meetups.json');
+const presenters = require('../../data/Presenters.json');
+const locations = require('../../data/Locations.json');
 
 // Sorted meetups from newest to oldest;
 const sortedMeetups = meetups.records.sort(function(a, b) {
@@ -42,24 +42,22 @@ const locationZG = locations.records.filter(x =>
   x.fields.Meetups.includes(meetupsInZG[0].id)
 )[0].fields.Name;
 
-console.log(locationBEG);
-
 const upcomingMeetups = {
   BEG: {
-    date: meetupsInBEG[0].fields.Date,
-    url: meetupsInBEG[0].fields.URL,
+    date: formatDate(meetupsInBEG[0].fields.Date),
+    url: meetupsInBEG[0].fields.URL || '#',
     presenters: sortAlphabetically(presentersBEG),
     location: locationBEG
   },
   NS: {
-    date: meetupsInNS[0].fields.Date,
-    url: meetupsInNS[0].fields.URL,
+    date: formatDate(meetupsInNS[0].fields.Date),
+    url: meetupsInNS[0].fields.URL || '#',
     presenters: sortAlphabetically(presentersNS),
     location: locationNS
   },
   ZG: {
-    date: meetupsInZG[0].fields.Date,
-    url: meetupsInZG[0].fields.URL,
+    date: formatDate(meetupsInZG[0].fields.Date),
+    url: meetupsInZG[0].fields.URL || '#',
     presenters: sortAlphabetically(presentersZG),
     location: locationZG
   }
@@ -67,7 +65,7 @@ const upcomingMeetups = {
 
 // generate upcomingMeetups.json from formated data
 fs.writeFile(
-  './data/upcomingMeetups.json',
+  './data/UpcomingMeetups.json',
   JSON.stringify(upcomingMeetups),
   function(err) {
     if (err) return console.log(err);
@@ -81,4 +79,12 @@ function sortAlphabetically(array) {
     a = a.fields.Name.toUpperCase();
     return a > b ? 1 : a < b ? -1 : 0;
   });
+}
+
+// '2018-12-05' -> 5.12
+function formatDate(date) {
+  const dateParts = date.split('-');
+  const month = Number(dateParts[1]);
+  const day = Number(dateParts[2]);
+  return `${day}.${month}`;
 }

@@ -1,6 +1,6 @@
 {
   "BEG": {
-    "date": "2018-12-05",
+    "date": "5.12",
     "url": "https://www.meetup.com/Heapspace/events/256592041/?refund_policy=true&rv=ea1_v2&_xtd=gatlbWFpbF9jbGlja9oAJDQ1MDQ2OGVkLTBhMGUtNGUxOC05YTMyLWRiMzRmYjRlYmFhMg&_af=event&_af_eid=256592041&response=3&action=rsvp",
     "presenters": [
       {
@@ -48,9 +48,9 @@
     ],
     "location": "ICT Hub"
   },
-  "NS": { "date": "2018-12-18", "presenters": [], "location": "Dafed" },
+  "NS": { "date": "18.12", "url": "#", "presenters": [], "location": "Dafed" },
   "ZG": {
-    "date": "2018-12-05",
+    "date": "5.12",
     "url": "https://www.meetup.com/Heapspace/events/256592278/?rv=ea1_v2&_xtd=gatlbWFpbF9jbGlja9oAJDkyNDZhYjEwLWQ3ZTUtNDcwNC1hMGRmLWRiZThjNDYxNzYwMQ",
     "presenters": [
       {
