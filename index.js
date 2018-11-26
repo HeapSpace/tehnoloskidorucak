@@ -8,6 +8,6 @@ fs.writeFile(
   JSON.stringify(upcomingMeetups),
   function(err) {
     if (err) return console.log(err);
-    console.log(`Successfully generated ${upcomingMeetupsName}.json file`);
+    console.log(`Successfully generated: ${upcomingMeetupsName}.json`);
   }
 );

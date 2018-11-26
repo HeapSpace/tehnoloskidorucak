@@ -38,7 +38,7 @@ regions.forEach(r => {
 });
 
 // Build resulting object
-const upcomingMeetups = {}
+const upcomingMeetups = {};
 regions.forEach(r => {
   upcomingMeetups[r] = {
     date: formatDate(meetupsIn[r][0].fields.Date),
