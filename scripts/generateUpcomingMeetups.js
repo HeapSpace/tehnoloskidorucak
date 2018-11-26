@@ -1,8 +1,6 @@
-const fs = require('fs');
-
-const meetups = require('../../data/Meetups.json');
-const presenters = require('../../data/Presenters.json');
-const locations = require('../../data/Locations.json');
+const meetups = require('../data/Meetups.json');
+const presenters = require('../data/Presenters.json');
+const locations = require('../data/Locations.json');
 
 // Sorted meetups from newest to oldest;
 const sortedMeetups = meetups.records.sort(function(a, b) {
@@ -63,15 +61,7 @@ const upcomingMeetups = {
   }
 };
 
-// generate upcomingMeetups.json from formated data
-fs.writeFile(
-  './data/UpcomingMeetups.json',
-  JSON.stringify(upcomingMeetups),
-  function(err) {
-    if (err) return console.log(err);
-    console.log('Successfully generated upcomingMeetups.json file');
-  }
-);
+module.exports = upcomingMeetups;
 
 function sortAlphabetically(array) {
   return array.sort(function(a, b) {
