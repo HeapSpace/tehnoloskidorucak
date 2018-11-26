@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+  		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		{{ if .IsHome -}}
+    	<title>{{ .Site.Title }}</title>
+    	{{ else }}
+		<title>{{ .Title }} - {{ .Site.Title }}</title>
+		{{ end }}
+
+		{{ $style := resources.Get "sass/style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+		<link rel='stylesheet' href='{{ $style.RelPermalink }}' type='text/css' media='all' />
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<style type="text/css">
+		body {
+			background: none;
+			padding: 0;
+			margin: 0;
+		}
+		</style>
+
+		{{ block "head" . }}{{ end }}
+    </head>
+    <body>
+
+    	<main class="grid">
+  			<div class="content-wrap">
+
+		{{ block "main" . }}{{ end }}
+
+			</div>
+		</main>
+
+		{{ partial "js" . }}
+    </body>
+</html>
