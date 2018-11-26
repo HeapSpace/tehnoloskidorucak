@@ -12,10 +12,12 @@ const sortedMeetups = meetups.records.sort(function(a, b) {
 // Collect regions from locations
 const regions = [];
 locations.records.forEach(r => {
-  regions.push(r.fields.Region);
+  if (regions.includes(r.fields.Region) === false) {
+    regions.push(r.fields.Region);
+  }
 });
 
-// Filter out meetups by cities
+// Filter out meetups by regions
 const meetupsIn = {};
 regions.forEach(r => {
   meetupsIn[r] = sortedMeetups.filter(x => x.fields.Region.includes(r));
