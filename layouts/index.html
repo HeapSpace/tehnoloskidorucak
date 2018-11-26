@@ -7,7 +7,7 @@
 
   {{ partial "box" (dict "town" "zagreb" "date" .Site.Data.UpcomingMeetups.ZG.date "talks" .Params.zgb_talks "link" .Site.Data.UpcomingMeetups.ZG.url "color" "bg-blue" "location" .Site.Data.UpcomingMeetups.ZG.location) }}
 
-  {{ partial "box" (dict "town" "novi sad" "duate" .Site.Data.UpcomingMeetups.NS.date "talks" .Params.ns_talks "link" .Site.Data.UpcomingMeetups.NS.url "color" "bg-black" "location" .Site.Data.UpcomingMeetups.NS.location) }}
+  {{ partial "box" (dict "town" "novi sad" "date" .Site.Data.UpcomingMeetups.NS.date "talks" .Params.ns_talks "link" .Site.Data.UpcomingMeetups.NS.url "color" "bg-black" "location" .Site.Data.UpcomingMeetups.NS.location) }}
 </div>
 
 {{ end }}
