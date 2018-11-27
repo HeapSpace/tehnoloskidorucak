@@ -24,7 +24,7 @@ function fetch(name) {
           });
         });
 
-        fs.writeFile(
+        fs.writeFileSync(
           `./data/${name}.json`,
           JSON.stringify(temporaryData),
           function(err) {
