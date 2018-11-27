@@ -16,15 +16,15 @@ const meetupsInZG = sortedMeetups.filter(x => x.fields.Region.includes('ZG'));
 
 // Match upcoming meetups with presenters
 const presentersBEG = presenters.records.filter(x =>
-  x.fields.Meetup.includes(meetupsInBEG[0].id)
+  x.Meetup.includes(meetupsInBEG[0].id)
 );
 
 const presentersNS = presenters.records.filter(x =>
-  x.fields.Meetup.includes(meetupsInNS[0].id)
+  x.Meetup.includes(meetupsInNS[0].id)
 );
 
 const presentersZG = presenters.records.filter(x =>
-  x.fields.Meetup.includes(meetupsInZG[0].id)
+  x.Meetup.includes(meetupsInZG[0].id)
 );
 
 // Match locations with regions
@@ -65,8 +65,8 @@ module.exports = upcomingMeetups;
 
 function sortAlphabetically(array) {
   return array.sort(function(a, b) {
-    b = b.fields.Name.toUpperCase();
-    a = a.fields.Name.toUpperCase();
+    b = b.Name.toUpperCase();
+    a = a.Name.toUpperCase();
     return a > b ? 1 : a < b ? -1 : 0;
   });
 }

@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-const upcomingMeetups = require('./scripts/generateUpcomingMeetups');
 const fetchData = require('./scripts/fetchData');
+const upcomingMeetups = require('./scripts/generateUpcomingMeetups');
 
 // generate upcomingMeetups.json from formated data
 fs.writeFile(

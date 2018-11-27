@@ -17,9 +17,15 @@ module.exports = base('Presenters')
   })
   .eachPage(
     function page(records, fetchNextPage) {
-      // format records
       records.map(record => {
-        temporaryPresenters.records.push(record._rawJson);
+        let temporaryRecord = {};
+
+        // flatten object
+        temporaryRecord = {
+          id: record._rawJson.id,
+          ...record._rawJson.fields
+        };
+        temporaryPresenters.records.push(temporaryRecord);
       });
 
       fs.writeFile(
