@@ -61,7 +61,9 @@ const upcomingMeetups = {
   }
 };
 
-module.exports = upcomingMeetups;
+module.exports = {
+  upcomingMeetups
+};
 
 function sortAlphabetically(array) {
   return array.sort(function(a, b) {

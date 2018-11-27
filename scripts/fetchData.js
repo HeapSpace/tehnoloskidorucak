@@ -1,6 +1,8 @@
 const fs = require('fs');
 const Airtable = require('airtable');
 
+const upcomingMeetups = require('./generateUpcomingMeetups');
+
 const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN;
 
 const base = new Airtable({ apiKey: AIRTABLE_TOKEN }).base('appNUbQdF6KjbUOHy');
@@ -46,6 +48,16 @@ module.exports = base('Presenters')
         console.error(err);
         return;
       }
+      // generate upcomingMeetups.json from formated data
+      fs.writeFile(
+        './data/UpcomingMeetups.json',
+        JSON.stringify(upcomingMeetups),
+        function(err) {
+          if (err) return console.log(err);
+          console.log('Successfully generated upcomingMeetups.json file');
+        }
+      );
+
       console.log('Successfully generated Presenters.json file');
     }
   );
