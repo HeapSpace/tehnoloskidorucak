@@ -3,48 +3,48 @@ const presenters = require('../data/Presenters.json');
 const locations = require('../data/Locations.json');
 
 // Sorted meetups from newest to oldest;
-const sortedMeetups = meetups.records.sort(function(a, b) {
-  a = new Date(a.fields.Date);
-  b = new Date(b.fields.Date);
+const sortedMeetups = meetups.sort(function(a, b) {
+  a = new Date(a.Date);
+  b = new Date(b.Date);
   return a > b ? -1 : a < b ? 1 : 0;
 });
 
 // Collect regions from locations
 const regions = [];
-locations.records.forEach(r => {
-  if (regions.includes(r.fields.Region) === false) {
-    regions.push(r.fields.Region);
+locations.forEach(r => {
+  if (regions.includes(r.Region) === false) {
+    regions.push(r.Region);
   }
 });
 
 // Filter out meetups by regions
 const meetupsIn = {};
 regions.forEach(r => {
-  meetupsIn[r] = sortedMeetups.filter(x => x.fields.Region.includes(r));
+  meetupsIn[r] = sortedMeetups.filter(x => x.Region.includes(r));
 });
 
 // Match upcoming meetups with presenters
 const presentersIn = {};
 regions.forEach(r => {
-  presentersIn[r] = presenters.records.filter(x =>
-    x.fields.Meetup.includes(meetupsIn[r][0].id)
+  presentersIn[r] = presenters.filter(x =>
+    x.Meetup.includes(meetupsIn[r][0]._id)
   );
 });
 
 // Match locations with regions
 const locationsIn = {};
 regions.forEach(r => {
-  locationsIn[r] = locations.records.filter(x =>
-    x.fields.Meetups.includes(meetupsIn[r][0].id)
-  )[0].fields['Display name'];
+  locationsIn[r] = locations.filter(x =>
+    x.Meetups.includes(meetupsIn[r][0]._id)
+  )[0]['Display name'];
 });
 
 // Build resulting object
 const upcomingMeetups = {};
 regions.forEach(r => {
   upcomingMeetups[r] = {
-    date: formatDate(meetupsIn[r][0].fields.Date),
-    url: meetupsIn[r][0].fields.URL || '#',
+    date: formatDate(meetupsIn[r][0].Date),
+    url: meetupsIn[r][0].URL || '#',
     presenters: sortAlphabetically(presentersIn[r]),
     location: locationsIn[r]
   }
@@ -54,8 +54,8 @@ module.exports = upcomingMeetups;
 
 function sortAlphabetically(array) {
   return array.sort(function(a, b) {
-    b = b.fields.Name.toUpperCase();
-    a = a.fields.Name.toUpperCase();
+    b = b.Name.toUpperCase();
+    a = a.Name.toUpperCase();
     return a > b ? 1 : a < b ? -1 : 0;
   });
 }

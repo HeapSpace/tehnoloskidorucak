@@ -4,7 +4,7 @@
   	<h4>{{ .location }}</h4>
 		<ul class="talks">
       {{ range .talks }}
-        <li><span>⬣</span><a href="{{ .fields.URL }}" target="_blank">{{ .fields.Name }}</a></li>
+        <li><span>⬣</span><a href="{{ .URL }}" target="_blank">{{ .Name }}</a></li>
       {{ end }}
 		</ul>
 

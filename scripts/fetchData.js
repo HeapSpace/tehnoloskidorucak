@@ -19,7 +19,7 @@ function fetch(name) {
           records.map(record => {
             // flatten object
             temporaryData.push({
-              id: record._rawJson.id,
+              _id: record._rawJson.id,
               ...record._rawJson.fields
             });
           });
