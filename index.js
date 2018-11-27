@@ -3,9 +3,9 @@ const fs = require('fs');
 const fd = require('./scripts/fetchData');
 
 fd.fetch('Presenters')
-	.then(function() {return fd.fetch('Meetups');})
-	.then(function() {return fd.fetch('Locations');})
-	.then(function() {
+  .then(() => fd.fetch('Meetups'))
+  .then(() => fd.fetch('Locations'))
+  .then(() => {
 		console.log("Fetching AirTables done.");
 
 		const upcomingMeetupsName = 'UpcomingMeetups';
@@ -14,12 +14,10 @@ fd.fetch('Presenters')
 		fs.writeFile(
 		  `./data/${upcomingMeetupsName}.json`,
 		  JSON.stringify(upcomingMeetups),
-		  function(err) {
+      err => {
 		    if (err) return console.log(err);
 		    console.log(`Successfully generated: ${upcomingMeetupsName}.json`);
 		  }
 		);
 	})
-	.catch(function(err) {
-		console.log(err);
-	});
+  .catch(err => console.log(err));
