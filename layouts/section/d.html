@@ -14,8 +14,10 @@ $(function() {
 {{ define "main" }}
 
 <div style="text-align: center">
-	<input id="txt" type="text" placeholder="Enter the secret" style="margin-bottom: 20px; border: 1px solid #666; padding: 4px;"><br>
-	<button id="btn" style="width: 50%; height: 100px; color: #ff0000; background-color: #333;">DEPLOY!</button>
+	{{ .Content }}
+
+	<input id="txt" type="text" placeholder="Enter the build code" style="margin: 40px 0; border: 1px solid #666; padding: 4px; width: 50%;"><br>
+	<button id="btn" style="width: 50%; height: 100px; color: #ff0000; background-color: #333; font-weight: bold;">DEPLOY!</button>
 </div>
 
 {{ end }}
