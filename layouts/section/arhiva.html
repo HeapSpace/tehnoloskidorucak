@@ -1,7 +1,131 @@
 {{ define "head" }}
+<script type="text/javascript">
+function initMap() {
+  var regions = [
+	{
+  		name: "Beograd",
+	  	center : {lat: 44.787197, lng: 20.457273},
+	  	count: 27
+	},
+	{
+		name: "Novi Sad",
+		center : {lat: 45.267136, lng: 19.833549},
+		count: 3
+	},
+	{
+		name: "Zagreb",
+		center : {lat: 45.815399, lng: 15.966568},
+		count: 6
+	}
+  ];
+  var regionCenter = {lat: 45, lng: 20};
+  var map = new google.maps.Map(document.getElementById('map'), {
+  	zoom: 7, center: regionCenter,
+		styles: [
+            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            {
+              featureType: 'administrative.locality',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [{color: '#263c3f'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#6b9a76'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [{color: '#38414e'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#212a37'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#9ca5b3'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{color: '#746855'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#1f2835'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#f3d19c'}]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'geometry',
+              stylers: [{color: '#2f3948'}]
+            },
+            {
+              featureType: 'transit.station',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{color: '#17263c'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#515c6d'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.stroke',
+              stylers: [{color: '#17263c'}]
+            }
+          ]
+
+
+  });
+  regions.forEach(r => {
+	  new google.maps.Circle({
+	  	center: r.center,
+		radius: r.count * 2000,
+		fillColor: '#ff0000',
+		fillOpacity: 0.5,
+		strokeWeight: 2,
+		map: map,
+	});
+  });
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQDz_F6B8Bc8g41ZgM583MYE-KhsH3TkE&callback=initMap"></script>
 <style type="text/css">
 a {
 	color: #231f20;
+}
+#map {
+    height: 400px;
+	width: 100%;
+	border: 2px solid #231f20;
+	margin-bottom: 2em;
 }
 </style>
 {{ end }}
@@ -9,6 +133,8 @@ a {
 {{ define "main" }}
 
 {{ .Content }}
+
+<div id="map"></div>
 
 {{ range (sort $.Site.Data.Meetups "ID" "desc")}}
 
