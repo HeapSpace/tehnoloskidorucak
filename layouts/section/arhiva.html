@@ -1,0 +1,30 @@
+{{ define "head" }}
+<style type="text/css">
+a {
+	color: #231f20;
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+
+{{ .Content }}
+
+{{ range (sort $.Site.Data.Meetups "ID" "desc")}}
+
+<div>
+{{ $meetupId := slice ._id }}
+<h2>TD#{{ .ID }}</h2>
+<h3>{{ index .Region 0 }} | {{ .Date }}</h3>
+
+	<div>
+		<ul>
+			{{ range where (sort $.Site.Data.Presenters ".Name" ) "Meetup" "intersect" $meetupId }}
+				<li><a href="{{ .URL }}" target="_blank">{{ .Name }}</a></li>
+			{{ end }}
+		</ul>
+	</div>
+{{ end }}
+</div>
+
+{{ end }}
