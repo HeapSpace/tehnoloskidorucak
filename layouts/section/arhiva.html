@@ -158,6 +158,9 @@ a {
 .mapInfo {
   color: var(--color-hs-black);
 }
+.presenters {
+  margin-bottom: 2em;
+}
 </style>
 {{ end }}
 
@@ -183,12 +186,10 @@ a {
 <h3>
 {{ range where $.Site.Data.Regions "._id" "eq" (index .Region 0) }} {{ .Name }} {{end}} | {{ .Date }}</h3>
 
-	<div>
-		<ul>
-			{{ range where (sort $.Site.Data.Presenters ".Name" ) "Meetup" "intersect" $meetupId }}
-				<li><a href="{{ .URL }}" target="_blank">{{ .Name }}</a></li>
+	<div class="presenters">
+			/ {{ range where (sort $.Site.Data.Presenters ".Name" ) "Meetup" "intersect" $meetupId }}
+				<a href="{{ .URL }}" target="_blank">{{ .Name }}</a> /
 			{{ end }}
-		</ul>
 	</div>
 {{ end }}
 </div>
