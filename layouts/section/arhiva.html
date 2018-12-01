@@ -128,7 +128,7 @@ const infoWindow = new google.maps.InfoWindow({
   regions.forEach(r => {
 	  var cityCircle = new google.maps.Circle({
 	  	center: r.center,
-		  radius: 25000,
+		  radius: 30000,
 		  strokeColor: color_hs_red_string,
 		  strokeOpacity: 0.5,
 		  fillColor: color_hs_red_string,
@@ -166,6 +166,14 @@ a {
 {{ .Content }}
 
 <div id="map"></div>
+
+<p>
+  Ukupno {{ len $.Site.Data.Presenters }} prezentera na {{ len $.Site.Data.Meetups }} doručaka.
+</p>
+
+{{ end }}
+
+{{ define "page" }}
 
 {{ range (sort $.Site.Data.Meetups "ID" "desc")}}
 
