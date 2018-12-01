@@ -1,131 +1,162 @@
 {{ define "head" }}
 <script type="text/javascript">
+
+const color_hs_red = 0xfd4000;
+const color_hs_red_string = '#fd4000';
+const color_hs_beige = 0xfff4e1;
+const color_hs_beige_string = '#fff4e1';
+const color_hs_blue = 0x384af4;
+const color_hs_blue_string = '#384af4';
+const color_hs_black = 0x231f20;
+const color_hs_black_string = '#231f20';
+const color_hs_white = 0xffffff;
+const color_hs_white_string = '#ffffff';
+
 function initMap() {
-  var regions = [
-	{
-  		name: "Beograd",
-	  	center : {lat: 44.787197, lng: 20.457273},
-	  	count: 27
-	},
-	{
-		name: "Novi Sad",
-		center : {lat: 45.267136, lng: 19.833549},
-		count: 3
-	},
-	{
-		name: "Zagreb",
-		center : {lat: 45.815399, lng: 15.966568},
-		count: 6
-	}
-  ];
-  var regionCenter = {lat: 45, lng: 20};
+
+  const regions = [
+  {{ range .Site.Data.Regions }}
+  {{ $regionPresenters := (where $.Site.Data.Presenters ".Meetup_Region" "intersect" (slice ._id)) }}
+  {{ $regionMeetups := (where $.Site.Data.Meetups ".Region" "intersect" (slice ._id)) }}
+  {
+    name: {{ .Name }},
+    center: {lat: {{ .lat }}, lng: {{ .lng }}},
+    countPresenters: {{ len $regionPresenters }},
+    countMeetups: {{ len $regionMeetups }}
+  },
+  {{ end }}
+  {}].slice(0, -1);
+
+  var regionCenter = {lat: 45, lng: 19};
   var map = new google.maps.Map(document.getElementById('map'), {
-  	zoom: 7, center: regionCenter,
-		styles: [
-            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+  	zoom: 7,
+  	center: regionCenter,
+  	backgroundColor: color_hs_beige,
+    disableDefaultUI: true,
+  	draggable: false,
+  	keyboardShortcuts: false,
+    scrollwheel: false,
+	  styles: [
+            {elementType: 'geometry', stylers: [{color: color_hs_black_string}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: color_hs_black_string}]},
+            {elementType: 'labels.text.fill', stylers: [{color: color_hs_beige_string}]},
+            {
+                featureType: 'administrative',
+                elementType: 'geometry.stroke',
+                stylers: [{color: color_hs_beige_string}]
+              },
             {
               featureType: 'administrative.locality',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              stylers: [{color: color_hs_beige_string}]
             },
             {
               featureType: 'poi',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              stylers: [{color: color_hs_beige_string}]
             },
             {
               featureType: 'poi.park',
               elementType: 'geometry',
-              stylers: [{color: '#263c3f'}]
+              stylers: [{color: color_hs_black_string}]
             },
             {
               featureType: 'poi.park',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#6b9a76'}]
+              stylers: [{color: color_hs_black_string}]
             },
             {
               featureType: 'road',
               elementType: 'geometry',
-              stylers: [{color: '#38414e'}]
+              stylers: [{color: color_hs_black_string}]
             },
             {
               featureType: 'road',
               elementType: 'geometry.stroke',
-              stylers: [{color: '#212a37'}]
+              stylers: [{color: color_hs_black_string}]
             },
             {
               featureType: 'road',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#9ca5b3'}]
+              stylers: [{color: color_hs_black_string}]
             },
             {
               featureType: 'road.highway',
               elementType: 'geometry',
-              stylers: [{color: '#746855'}]
+              stylers: [{color: color_hs_black_string}]
             },
             {
               featureType: 'road.highway',
               elementType: 'geometry.stroke',
-              stylers: [{color: '#1f2835'}]
+              stylers: [{color: color_hs_black_string}]
             },
             {
               featureType: 'road.highway',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#f3d19c'}]
+              stylers: [{color: color_hs_black_string}]
             },
             {
               featureType: 'transit',
               elementType: 'geometry',
-              stylers: [{color: '#2f3948'}]
+              stylers: [{color: color_hs_black_string}]
             },
             {
               featureType: 'transit.station',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              stylers: [{color: color_hs_black_string}]
             },
             {
               featureType: 'water',
               elementType: 'geometry',
-              stylers: [{color: '#17263c'}]
+              stylers: [{color: color_hs_blue_string}]
             },
             {
               featureType: 'water',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#515c6d'}]
+              stylers: [{color: color_hs_blue_string}]
             },
             {
               featureType: 'water',
               elementType: 'labels.text.stroke',
-              stylers: [{color: '#17263c'}]
+              stylers: [{color: color_hs_blue_string}]
             }
           ]
-
-
   });
+const infoWindow = new google.maps.InfoWindow({
+  maxWidth: 500
+});
   regions.forEach(r => {
-	  new google.maps.Circle({
+	  var cityCircle = new google.maps.Circle({
 	  	center: r.center,
-		radius: r.count * 2000,
-		fillColor: '#ff0000',
-		fillOpacity: 0.5,
-		strokeWeight: 2,
-		map: map,
-	});
+		  radius: 25000,
+		  strokeColor: color_hs_red_string,
+		  strokeOpacity: 0.5,
+		  fillColor: color_hs_red_string,
+		  fillOpacity: 0.3,
+		  strokeWeight: 4,
+		  map: map,
+	  });
+    google.maps.event.addListener(cityCircle, 'click', function(ev) {
+      infoWindow.setContent('<div class="mapInfo">Doručaka: <b>' + r.countMeetups + '</b><br>Predavača: <b>' + r.countPresenters + '</b></div>');
+      infoWindow.setPosition(ev.latLng);
+      infoWindow.open(map);
+    });
   });
 }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQDz_F6B8Bc8g41ZgM583MYE-KhsH3TkE&callback=initMap"></script>
 <style type="text/css">
 a {
-	color: #231f20;
+	color: var(--color-hs-black);
 }
 #map {
-    height: 400px;
+  height: 400px;
 	width: 100%;
-	border: 2px solid #231f20;
+	border: 2px solid var(--color-hs-black);
 	margin-bottom: 2em;
+}
+.mapInfo {
+  color: var(--color-hs-black);
 }
 </style>
 {{ end }}
@@ -141,7 +172,8 @@ a {
 <div>
 {{ $meetupId := slice ._id }}
 <h2>TD#{{ .ID }}</h2>
-<h3>{{ index .Region 0 }} | {{ .Date }}</h3>
+<h3>
+{{ range where $.Site.Data.Regions "._id" "eq" (index .Region 0) }} {{ .Name }} {{end}} | {{ .Date }}</h3>
 
 	<div>
 		<ul>

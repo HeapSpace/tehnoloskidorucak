@@ -2,6 +2,7 @@ const fs = require('fs');
 const Airtable = require('airtable');
 
 const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN;
+
 const base = new Airtable({ apiKey: AIRTABLE_TOKEN }).base('appNUbQdF6KjbUOHy');
 
 module.exports = {
@@ -43,7 +44,7 @@ function fetch(name) {
             return;
           }
           resolve();
-          console.log(`Successfully fetched: ${name}.json`);
+          console.log(`Fetched: ${name}.json`);
         }
       );
   });

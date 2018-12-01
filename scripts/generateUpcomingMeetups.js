@@ -1,6 +1,7 @@
 const meetups = require('../data/Meetups.json');
 const presenters = require('../data/Presenters.json');
 const locations = require('../data/Locations.json');
+const regions = require('../data/Regions.json');
 
 // Sorted meetups from newest to oldest;
 const sortedMeetups = meetups.sort(function(a, b) {
@@ -9,44 +10,36 @@ const sortedMeetups = meetups.sort(function(a, b) {
   return a > b ? -1 : a < b ? 1 : 0;
 });
 
-// Collect regions from locations
-const regions = [];
-locations.forEach(r => {
-  if (regions.includes(r.Region) === false) {
-    regions.push(r.Region);
-  }
-});
-
 // Filter out meetups by regions
 const meetupsIn = {};
 regions.forEach(r => {
-  meetupsIn[r] = sortedMeetups.filter(x => x.Region.includes(r));
+  meetupsIn[r.Name] = sortedMeetups.filter(x => x.Region.includes(r._id));
 });
 
 // Match upcoming meetups with presenters
 const presentersIn = {};
 regions.forEach(r => {
-  presentersIn[r] = presenters.filter(x =>
-    x.Meetup.includes(meetupsIn[r][0]._id)
+  presentersIn[r.Name] = presenters.filter(x =>
+    x.Meetup.includes(meetupsIn[r.Name][0]._id)
   );
 });
 
 // Match locations with regions
 const locationsIn = {};
 regions.forEach(r => {
-  locationsIn[r] = locations.filter(x =>
-    x.Meetups.includes(meetupsIn[r][0]._id)
+  locationsIn[r.Name] = locations.filter(x =>
+    x.Meetups.includes(meetupsIn[r.Name][0]._id)
   )[0]['Display name'];
 });
 
 // Build resulting object
 const upcomingMeetups = {};
 regions.forEach(r => {
-  upcomingMeetups[r] = {
-    date: formatDate(meetupsIn[r][0].Date),
-    url: meetupsIn[r][0].URL || '#',
-    presenters: sortAlphabetically(presentersIn[r]),
-    location: locationsIn[r]
+  upcomingMeetups[r.Name] = {
+    date: formatDate(meetupsIn[r.Name][0].Date),
+    url: meetupsIn[r.Name][0].URL || '#',
+    presenters: sortAlphabetically(presentersIn[r.Name]),
+    location: locationsIn[r.Name]
   }
 });
 
