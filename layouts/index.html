@@ -5,7 +5,7 @@
 {{ $nextMeetups := .Site.Data.UpcomingMeetups }}
 
 <div class="boxes">
-  {{ partial "box" (dict "town" "beograd" "date" $nextMeetups.BGD.date "talks" $nextMeetups.BEG.presenters "link" $nextMeetups.BGD.url "color" "bg-red" "location" $nextMeetups.BGD.location) }}
+  {{ partial "box" (dict "town" "beograd" "date" $nextMeetups.BGD.date "talks" $nextMeetups.BGD.presenters "link" $nextMeetups.BGD.url "color" "bg-red" "location" $nextMeetups.BGD.location) }}
 
   {{ partial "box" (dict "town" "zagreb" "date" $nextMeetups.ZG.date "talks" $nextMeetups.ZG.presenters "link" $nextMeetups.ZG.url "color" "bg-blue" "location" $nextMeetups.ZG.location) }}
 
