@@ -161,6 +161,13 @@ a {
 .presenters {
   margin-bottom: 2em;
 }
+
+@media (max-width: 768px){
+  .archived-meetup {
+    font-size: 80%;
+    margin: 0 1em 0 1em;
+  }
+}
 </style>
 {{ end }}
 
@@ -180,7 +187,7 @@ a {
 
 {{ range (sort $.Site.Data.Meetups "ID" "desc") }}
 
-<div>
+<div class="archived-meetup">
 {{ $meetupId := slice ._id }}
 <h2>TD#{{ .ID }}</h2>
 <h3>{{ range where $.Site.Data.Regions "._id" "eq" (index .Region 0) }} {{ .Name }} {{end}} | {{ .Date }}</h3>
