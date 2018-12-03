@@ -137,7 +137,7 @@ const infoWindow = new google.maps.InfoWindow({
 		  map: map,
 	  });
     google.maps.event.addListener(cityCircle, 'click', function(ev) {
-      infoWindow.setContent('<div class="mapInfo">Doručaka: <b>' + r.countMeetups + '</b><br>Predavača: <b>' + r.countPresenters + '</b></div>');
+      infoWindow.setContent('<div class="mapInfo">Događaja: <b>' + r.countMeetups + '</b><br>Predavača: <b>' + r.countPresenters + '</b></div>');
       infoWindow.setPosition(ev.latLng);
       infoWindow.open(map);
     });
@@ -175,11 +175,11 @@ a {
 
 {{ .Content }}
 
-<div id="map"></div>
-
 <p>
-  Ukupno {{ len $.Site.Data.Presenters }} prezentera na {{ len $.Site.Data.Meetups }} doručaka.
+	Tokom {{ len $.Site.Data.Meetups }} izdanja Tehnološkog doručka predstavljeno je {{ len $.Site.Data.Presenters }} ideja, u {{ len $.Site.Data.Regions  }} grada u regionu.
 </p>
+
+<div id="map"></div>
 
 {{ end }}
 
