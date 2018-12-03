@@ -178,20 +178,19 @@ a {
 
 {{ define "page" }}
 
-{{ range (sort $.Site.Data.Meetups "ID" "desc")}}
+{{ range (sort $.Site.Data.Meetups "ID" "desc") }}
 
 <div>
 {{ $meetupId := slice ._id }}
 <h2>TD#{{ .ID }}</h2>
-<h3>
-{{ range where $.Site.Data.Regions "._id" "eq" (index .Region 0) }} {{ .Name }} {{end}} | {{ .Date }}</h3>
+<h3>{{ range where $.Site.Data.Regions "._id" "eq" (index .Region 0) }} {{ .Name }} {{end}} | {{ .Date }}</h3>
 
 	<div class="presenters">
 			/ {{ range where (sort $.Site.Data.Presenters ".Name" ) "Meetup" "intersect" $meetupId }}
 				<a href="{{- .URL -}}" target="_blank">{{- .Name -}}</a> /
-			{{ end }}
+			  {{ end }}
 	</div>
-{{ end }}
-</div>
 
+</div>
+{{ end }}
 {{ end }}
