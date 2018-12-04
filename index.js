@@ -1,4 +1,5 @@
 const fs = require('fs');
+const chalk = require('chalk');
 
 const fd = require('./scripts/fetchData');
 
@@ -11,7 +12,7 @@ function generateAllData() {
       JSON.stringify(upcomingMeetups),
       err => {
         if (err) return console.log(err);
-        console.log(`Generated: ${upcomingMeetupsName}.json`);
+        console.log(`Generated: ${chalk.yellow(upcomingMeetupsName)}.json`);
       }
     );
 }

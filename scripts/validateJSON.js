@@ -1,15 +1,17 @@
+const chalk = require('chalk');
+
 const validationSchema = {
   'Meetups': {
-    requiredFields: ['ID', 'Location', 'Region', 'Date', 'Presenters']
+    requiredFields: ['_id', 'ID', 'Location', 'Region', 'Date', 'Presenters']
   },
   'Presenters': {
-    requiredFields: ['Name', 'TD', 'Meetup']
+    requiredFields: ['_id', 'Name', 'TD', 'Meetup']
   },
   'Locations': {
-    requiredFields: ['Name', 'Region', 'FullName', 'DisplayName', 'Address']
+    requiredFields: ['_id', 'Name', 'Region', 'FullName', 'DisplayName', 'Address']
   },
   'Regions': {
-    requiredFields: ['Name', 'Town', 'lat', 'lng', 'Locations']
+    requiredFields: ['_id', 'Name', 'Town', 'lat', 'lng', 'Locations']
   }
 }
 
@@ -23,7 +25,7 @@ const validate = (array, jsonFileName) => {
     requiredFields.map(field => {
       if (!object[field]) {
         throw new Error(`
-${field} is a required field in ${jsonFileName} data.
+${chalk.bgRed(field)} is a required field in ${chalk.bgCyan(jsonFileName)} data.
 Problematic object:
 ${JSON.stringify(object, null, 2)}
 `)

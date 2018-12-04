@@ -4,10 +4,9 @@
   "description": "[tehnoloskidorucak.io](https://tehnoloskidorucak.io)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start:fns": "netlify-lambda serve src/fns",
-    "build:fns": "netlify-lambda build src/fns",
-    "test": "jest"
+    "build:fns": "netlify-lambda build src/fns"
   },
   "repository": {
     "type": "git",
@@ -22,6 +21,7 @@
   "homepage": "https://github.com/HeapSpace/tehnoloskidorucak#readme",
   "dependencies": {
     "airtable": "^0.5.7",
+    "chalk": "^2.4.1",
     "netlify-lambda": "^1.0.3",
     "node-fetch": "^2.3.0"
   },

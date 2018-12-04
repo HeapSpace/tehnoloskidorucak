@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const fs = require('fs');
 const Airtable = require('airtable');
 
@@ -44,7 +45,7 @@ function fetch(name) {
             return;
           }
           resolve();
-          console.log(`Fetched: ${name}.json`);
+          console.log(`Fetched: ${chalk.green(name)}.json`);
         }
       );
   });
