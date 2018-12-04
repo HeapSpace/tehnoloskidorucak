@@ -1,7 +1,9 @@
-const meetups = require('../data/Meetups.json');
-const presenters = require('../data/Presenters.json');
-const locations = require('../data/Locations.json');
-const regions = require('../data/Regions.json');
+const validate = require('./validateJSON')
+
+const meetups = validate(require('../data/Meetups.json'), 'Meetups');
+const presenters = validate(require('../data/Presenters.json'), 'Presenters');
+const locations = validate(require('../data/Locations.json'), 'Locations');
+const regions = validate(require('../data/Regions.json'), 'Regions');
 
 // Sorted meetups from newest to oldest;
 const sortedMeetups = meetups.sort(function(a, b) {
