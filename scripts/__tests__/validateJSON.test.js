@@ -7,16 +7,20 @@ describe('loadAndValidate', () => {
   })
 
   describe("JSON files", () => {
-    it("returns array if Locations are valid", () => {
-      expect(loadAndValidate('Locations')).toBeInstanceOf(Array)
+    it("returns array if Meetups are valid", () => {
+      expect(loadAndValidate('Meetups')).toBeInstanceOf(Array)
     })
 
     it("returns array if Presenters are valid", () => {
       expect(loadAndValidate('Presenters')).toBeInstanceOf(Array)
     })
 
-    it("returns array if Meetups are valid", () => {
-      expect(loadAndValidate('Meetups')).toBeInstanceOf(Array)
+    it("returns array if Locations are valid", () => {
+      expect(loadAndValidate('Locations')).toBeInstanceOf(Array)
+    })
+
+    it("returns array if Regions are valid", () => {
+      expect(loadAndValidate('Regions')).toBeInstanceOf(Array)
     })
   })
 })

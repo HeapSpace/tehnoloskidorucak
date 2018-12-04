@@ -7,6 +7,9 @@ const validationSchema = {
   },
   'Locations': {
     requiredFields: ['Name', 'Region', 'FullName', 'DisplayName', 'Address']
+  },
+  'Regions': {
+    requiredFields: ['Name', 'Town', 'lat', 'lng', 'Locations']
   }
 }
 
