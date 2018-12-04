@@ -7,6 +7,7 @@ describe('validate', () => {
 
   it('raises an error if JSON is invalid', () => {
     const invalidPresenter = {
+      _id: 123,
       Name: 'Steva.rs',
       TD: 'BGD-46',
       Speakers: 'Steva Perić',
@@ -17,6 +18,7 @@ describe('validate', () => {
 
   it("returns array if it's valid", () => {
     const validPresenter = {
+      _id: 123,
       Name: 'Steva.rs',
       TD: 'BGD-46',
       Speakers: 'Steva Perić',
