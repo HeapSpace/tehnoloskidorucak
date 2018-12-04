@@ -13,12 +13,6 @@ const validationSchema = {
   }
 }
 
-const loadAndValidate = jsonFileName => {
-  const array = require(`../data/${jsonFileName}`)
-
-  return validate(array, jsonFileName)
-}
-
 const validate = (array, jsonFileName) => {
   if (!validationSchema[jsonFileName])
     throw new Error('Invalid JSON filename')
@@ -40,4 +34,4 @@ ${JSON.stringify(object, null, 2)}
   return array;
 }
 
-module.exports = { loadAndValidate, validate }
+module.exports = validate

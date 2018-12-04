@@ -1,28 +1,7 @@
-const { validate, loadAndValidate } = require('../validateJSON')
+const validate = require('../validateJSON')
 
 describe('loadAndValidate', () => {
-  it('raises an error if false jsonFileName is passed', () => {
-    expect(() => loadAndValidate('Random'))
-      .toThrow("Cannot find module '../data/Random' from 'validateJSON.js'")
-  })
 
-  describe("JSON files", () => {
-    it("returns array if Meetups are valid", () => {
-      expect(loadAndValidate('Meetups')).toBeInstanceOf(Array)
-    })
-
-    it("returns array if Presenters are valid", () => {
-      expect(loadAndValidate('Presenters')).toBeInstanceOf(Array)
-    })
-
-    it("returns array if Locations are valid", () => {
-      expect(loadAndValidate('Locations')).toBeInstanceOf(Array)
-    })
-
-    it("returns array if Regions are valid", () => {
-      expect(loadAndValidate('Regions')).toBeInstanceOf(Array)
-    })
-  })
 })
 
 describe('validate', () => {
@@ -49,5 +28,27 @@ describe('validate', () => {
     }
 
     expect(validate([validPresenter], 'Presenters')).toEqual([validPresenter])
+  })
+
+  describe("JSON files", () => {
+    it("returns array if Meetups are valid", () => {
+      const meetups = require('../../data/Meetups.json')
+      expect(validate(meetups, 'Meetups')).toBeInstanceOf(Array)
+    })
+
+    it("returns array if Presenters are valid", () => {
+      const presenters = require('../../data/Presenters.json')
+      expect(validate(presenters, 'Presenters')).toBeInstanceOf(Array)
+    })
+
+    it("returns array if Locations are valid", () => {
+      const locations = require('../../data/Locations.json')
+      expect(validate(locations, 'Locations')).toBeInstanceOf(Array)
+    })
+
+    it("returns array if Regions are valid", () => {
+      const regions = require('../../data/Regions.json')
+      expect(validate(regions, 'Regions')).toBeInstanceOf(Array)
+    })
   })
 })
