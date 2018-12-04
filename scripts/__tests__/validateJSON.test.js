@@ -1,9 +1,5 @@
 const validate = require('../validateJSON')
 
-describe('loadAndValidate', () => {
-
-})
-
 describe('validate', () => {
   it('raises an error if false jsonFileName is passed', () => {
     expect(() => validate([], 'Random')).toThrow('Invalid JSON filename')
