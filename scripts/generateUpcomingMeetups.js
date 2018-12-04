@@ -29,7 +29,7 @@ const locationsIn = {};
 regions.forEach(r => {
   locationsIn[r.Name] = locations.filter(x =>
     x.Meetups.includes(meetupsIn[r.Name][0]._id)
-  )[0]['Display name'];
+  )[0]['DisplayName'];
 });
 
 // Build resulting object
@@ -38,8 +38,8 @@ regions.forEach(r => {
   upcomingMeetups[r.Name] = {
     date: formatDate(meetupsIn[r.Name][0].Date),
     url: meetupsIn[r.Name][0].URL || '#',
+    location: locationsIn[r.Name],
     presenters: sortAlphabetically(presentersIn[r.Name]),
-    location: locationsIn[r.Name]
   }
 });
 
