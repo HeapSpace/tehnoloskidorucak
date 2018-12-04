@@ -1,4 +1,5 @@
 const validate = require('../validateJSON')
+const chalk = require('chalk');
 
 describe('validate', () => {
   it('raises an error if false jsonFileName is passed', () => {
@@ -13,7 +14,7 @@ describe('validate', () => {
       Speakers: 'Steva Perić',
     }
     expect(() => validate([invalidPresenter], 'Presenters'))
-      .toThrow('Meetup is a required field in Presenters data')
+      .toThrow(`${chalk.bgRed('Meetup')} is a required field in ${chalk.bgCyan('Presenters')} data`)
   })
 
   it("returns array if it's valid", () => {
