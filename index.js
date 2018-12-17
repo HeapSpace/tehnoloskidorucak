@@ -27,7 +27,11 @@ function fetchAll(callback) {
       console.log("\nFetching AirTables done.\n");
       callback();
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      console.error("Error detected!")
+      console.log(err);
+      process.exit(1);
+    });
 }
 
 fetchAll(generateAllData);
