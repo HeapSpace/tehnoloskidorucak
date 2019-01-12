@@ -2,7 +2,7 @@ const chalk = require('chalk');
 
 const validationSchema = {
   'Meetups': {
-    requiredFields: ['_id', 'ID', 'Location', 'Region', 'Date', 'Presenters']
+    requiredFields: ['_id', 'ID', 'Location', 'Region', 'Date']
   },
   'Presenters': {
     requiredFields: ['_id', 'Name', 'TD', 'Meetup']
