@@ -6,14 +6,15 @@
 
 <div class="boxes">
   {{ range $index, $m := $nextMeetups }}
+  {{ $n := mod $index 3 }}
   {{ $color := "" }}
-  {{ with (eq $index 0) }}
+  {{ with (eq $n 0) }}
   	{{ $color = "bg-red" }}
   {{ end }}
-  {{ with (eq $index 1) }}
+  {{ with (eq $n 1) }}
   	{{ $color = "bg-blue" }}
   {{ end }}
-  {{ with (eq $index 2) }}
+  {{ with (eq $n 2) }}
   	{{ $color = "bg-black" }}
   {{ end }}
 
