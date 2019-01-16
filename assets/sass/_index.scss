@@ -1,31 +1,30 @@
 .boxes {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-gap: 10px;
-  margin: 3em 0 3em 0;
 }
 
 .box {
   border-radius: 5px;
   padding: 20px;
   position: relative;
+  margin-bottom: 1em;
 }
 
 h2.town {
   white-space: nowrap;
 }
 h3.date {
-  margin-top: 40px;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
 ul.talks {
-  margin: 2em 0 3em 0;
+  margin: 1em 0 3em 0;
 
   li {
-  	font-size: 0.7em;
+    float: left;
+  	font-size: 1em;
   	margin-top: 20px;
   	letter-spacing: -2px;
+    margin-right: 20px;
     span {
       font-size: 0.8em;
       position:relative;

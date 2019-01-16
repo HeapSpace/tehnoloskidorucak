@@ -5,11 +5,22 @@
 {{ $nextMeetups := .Site.Data.UpcomingMeetups }}
 
 <div class="boxes">
-  {{ partial "box" (dict "town" "beograd" "date" $nextMeetups.BGD.date "talks" $nextMeetups.BGD.presenters "link" $nextMeetups.BGD.url "color" "bg-red" "location" $nextMeetups.BGD.location) }}
+  {{ range $index, $m := $nextMeetups }}
+  {{ $color := "" }}
+  {{ with (eq $index 0) }}
+  	{{ $color = "bg-red" }}
+  {{ end }}
+  {{ with (eq $index 1) }}
+  	{{ $color = "bg-blue" }}
+  {{ end }}
+  {{ with (eq $index 2) }}
+  	{{ $color = "bg-black" }}
+  {{ end }}
 
-  {{ partial "box" (dict "town" "zagreb" "date" $nextMeetups.ZG.date "talks" $nextMeetups.ZG.presenters "link" $nextMeetups.ZG.url "color" "bg-blue" "location" $nextMeetups.ZG.location) }}
+  	{{ partial "box" (dict "town" (lower $m.town) "date" $m.date "talks" .presenters "link" $m.url "color" $color "location" $m.location) }}
 
-  {{ partial "box" (dict "town" "novi sad" "date" $nextMeetups.NS.date "talks" $nextMeetups.NS.presenters "link" $nextMeetups.NS.url "color" "bg-black" "location" $nextMeetups.NS.location) }}
+  {{ end }}
+
 </div>
 
 <h2 style="text-align: center"><a href="/arhiva" style="color: var(--color-hs-black)">Arhiva</a></h2>

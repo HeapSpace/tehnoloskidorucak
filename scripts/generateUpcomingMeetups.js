@@ -35,14 +35,21 @@ regions.forEach(r => {
 });
 
 // Build resulting object
-const upcomingMeetups = {};
+const m = [];
 regions.forEach(r => {
-  upcomingMeetups[r.Name] = {
+  m.push({
+    name: r.Name,
+    town: r.Town,
     date: formatDate(meetupsIn[r.Name][0].Date),
+    datestamp: meetupsIn[r.Name][0].Date,
     url: meetupsIn[r.Name][0].URL || '#',
     location: locationsIn[r.Name],
-    presenters: sortAlphabetically(presentersIn[r.Name]),
-  }
+    presenters: sortAlphabetically(presentersIn[r.Name])
+})});
+const upcomingMeetups = m.sort(function(a, b) {
+  a = new Date(a.datestamp);
+  b = new Date(b.datestamp);
+  return a > b ? 1 : a < b ? -1 : 0;
 });
 
 module.exports = upcomingMeetups;
