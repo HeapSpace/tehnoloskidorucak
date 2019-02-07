@@ -6,20 +6,23 @@
 
 <div class="boxes">
   {{ range $index, $m := $nextMeetups }}
-  {{ $n := mod $index 3 }}
-  {{ $color := "" }}
-  {{ with (eq $n 0) }}
-  	{{ $color = "bg-red" }}
-  {{ end }}
-  {{ with (eq $n 1) }}
-  	{{ $color = "bg-blue" }}
-  {{ end }}
-  {{ with (eq $n 2) }}
-  	{{ $color = "bg-black" }}
-  {{ end }}
+  {{ $t := (time $m.datestamp) }}
+  {{ if  ($t.After now) }}
+    {{ $n := mod $index 3 }}
+    {{ $color := "" }}
+    {{ with (eq $n 0) }}
+    	{{ $color = "bg-red" }}
+    {{ end }}
+    {{ with (eq $n 1) }}
+    	{{ $color = "bg-blue" }}
+    {{ end }}
+    {{ with (eq $n 2) }}
+    	{{ $color = "bg-black" }}
+    {{ end }}
 
-  	{{ partial "box" (dict "town" (lower $m.town) "date" $m.date "talks" .presenters "link" $m.url "color" $color "location" $m.location) }}
+    	{{ partial "box" (dict "town" (lower $m.town) "date" $m.date "talks" .presenters "link" $m.url "color" $color "location" $m.location) }}
 
+  {{ end }}
   {{ end }}
 
 </div>
