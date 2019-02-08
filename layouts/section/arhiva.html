@@ -147,6 +147,18 @@ const infoWindow = new google.maps.InfoWindow({
     });
   });
 }
+
+function toggleLink(link, id) {
+  $('.business').each(function() {
+    const $this = $(this);
+    if ($this.attr('id') === id) {
+      $this.toggle();
+    } else {
+      $this.hide();
+    }
+  });
+
+}
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQDz_F6B8Bc8g41ZgM583MYE-KhsH3TkE&callback=initMap"></script>
 <style type="text/css">
@@ -166,6 +178,19 @@ a {
   margin-bottom: 2em;
 }
 
+.business {
+  background-color: var(--color-hs-beige);
+  font-size: 0.8em;
+  padding: 2em 1em 1em 1em;
+  display: none;
+  margin: 1em 0;
+}
+.business a {
+  color: var(--color-hs-black);
+}
+a.link-selected {
+  background-color: red;
+}
 @media (max-width: 768px){
   .archived-meetup {
     font-size: 80%;
@@ -198,8 +223,16 @@ a {
 
 	<div class="presenters">
 			/ {{ range where (sort $.Site.Data.Presenters ".Name" ) "Meetup" "intersect" $meetupId }}
-				<a href="{{- .URL -}}" target="_blank">{{- .Name -}}</a> /
+				<a href="#" onclick="toggleLink(this, 'td-{{anchorize .Name}}'); return false;">{{- .Name -}}</a> /
 			  {{ end }}
+
+      {{ range where $.Site.Data.Presenters "Meetup" "intersect" $meetupId }}
+      <div id="td-{{anchorize .Name}}" class="business">
+        <p>{{ .Description }}</p>
+        <p><a href="{{- .URL -}}" target="_blank">{{- .URL -}}</a></p>
+      </div>
+      {{ end }}
+
 	</div>
 
 </div>
