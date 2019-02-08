@@ -33,7 +33,7 @@ function initMap() {
   	center: regionCenter,
   	backgroundColor: color_hs_beige,
     disableDefaultUI: true,
-  	draggable: false,
+  	draggable: true,
   	keyboardShortcuts: false,
     scrollwheel: false,
 	  styles: [
@@ -125,10 +125,14 @@ function initMap() {
 const infoWindow = new google.maps.InfoWindow({
   maxWidth: 500
 });
+  var maxMeetups = 0;
+  regions.forEach(r => {
+    if (r.countMeetups > maxMeetups) maxMeetups = r.countMeetups;
+  });
   regions.forEach(r => {
 	  var cityCircle = new google.maps.Circle({
 	  	center: r.center,
-		  radius: 30000,
+		  radius: 20000 + (20000 * r.countMeetups / maxMeetups),
 		  strokeColor: color_hs_red_string,
 		  strokeOpacity: 0.5,
 		  fillColor: color_hs_red_string,
