@@ -46,10 +46,17 @@ body {
   background-size: 100% 100%;
   background-attachment: fixed;
   background-position: center -600px;
-  padding-top: 300px;
 }
 
 .strafta {
   background-color: $color-hs-beige;
   padding: 1em;
+}
+
+.page {
+  padding: 4em 0;
+  background-color: $color-hs-black;
+  a {
+    color: $color-hs-beige;
+  }
 }

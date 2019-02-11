@@ -1,3 +1,14 @@
+{{ define "head" }}
+<style>
+body {
+  padding-top: 300px;
+}
+.grid {
+  padding: 4em 0;
+}
+</style>
+{{ end }}
+
 {{ define "main" }}
 
 {{ .Content }}
@@ -27,6 +38,8 @@
 
 </div>
 
-<h2 style="text-align: center"><a href="/arhiva" style="color: var(--color-hs-black)">Arhiva</a></h2>
+{{ end }}
 
+{{ define "page" }}
+  <h2 style="text-align: center"><a href="/arhiva">Arhiva</a></h2>
 {{ end }}
