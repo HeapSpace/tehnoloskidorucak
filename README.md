@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/HeapSpace/tehnoloskidorucak.svg?branch=master)](https://travis-ci.org/HeapSpace/tehnoloskidorucak)
+
 # Tehnoloski Doručak
 
 [tehnoloskidorucak.io](https://tehnoloskidorucak.io)
