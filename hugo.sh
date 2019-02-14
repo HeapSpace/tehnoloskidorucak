@@ -10,4 +10,4 @@ include ".env"
 
 node index.js
 
-hugo "$@"
+hugo --gc --minify "$@"
