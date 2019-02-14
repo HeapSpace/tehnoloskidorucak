@@ -1,7 +1,7 @@
 [build]
 	functions = "./fns"
 	publish = "public"
-	command = "hugo.sh"
+	command = "./hugo.sh"
 
 [context.production.environment]
 	HUGO_VERSION = "0.54.0"
@@ -9,13 +9,13 @@
 	HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview]
-	command = "hugo.sh --buildFuture -b $DEPLOY_PRIME_URL"
+	command = "./hugo.sh --buildFuture -b $DEPLOY_PRIME_URL"
 
 [context.deploy-preview.environment]
 	HUGO_VERSION = "0.54.0"
 
 [context.branch-deploy]
-	command = "hugo.sh -b $DEPLOY_PRIME_URL"
+	command = "./hugo.sh -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy.environment]
 	HUGO_VERSION = "0.54.0"
