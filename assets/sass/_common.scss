@@ -51,6 +51,9 @@ html {
 .bg-red {
   background-color: $color-hs-red;
   color: $color-hs-white;
+  a {
+    color: $color-hs-white;
+  }
 }
 
 .bg-beige {
@@ -64,11 +67,17 @@ html {
 .bg-blue {
   background-color: $color-hs-blue;
   color: $color-hs-white;
+  a {
+    color: $color-hs-white;
+  }
 }
 
 .bg-black {
   background-color: $color-hs-black;
   color: $color-hs-white;
+  a {
+    color: $color-hs-white;
+  }
 }
 
 .bg-white {
