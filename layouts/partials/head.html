@@ -9,7 +9,7 @@
         <meta property="og:title" content="{{ .Site.Title }}" />
     {{ else }}
         <title>{{ .Title }} - {{ .Site.Title }}</title>
-        <meta property="og:title" content="{{ .Site.Title }}" />
+        <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
     {{ end }}
 
 	<meta name="description" content="{{ .Site.Params.Description }}"/>
