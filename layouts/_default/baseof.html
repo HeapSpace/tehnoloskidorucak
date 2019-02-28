@@ -5,6 +5,8 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
   		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+		{{ partial "head" . }}
+
 		{{ $style := resources.Get "sass/style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 		<link rel='stylesheet' href='{{ $style.RelPermalink }}' type='text/css' media='all' />
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
