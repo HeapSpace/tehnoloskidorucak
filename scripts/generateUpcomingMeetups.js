@@ -1,9 +1,7 @@
-const validate = require('./validateJSON')
-
-const meetups = validate(require('../data/Meetups.json'), 'Meetups');
-const presenters = validate(require('../data/Presenters.json'), 'Presenters');
-const locations = validate(require('../data/Locations.json'), 'Locations');
-const regions = validate(require('../data/Regions.json'), 'Regions');
+const meetups = require('../data/Meetups.json');
+const presenters = require('../data/Presenters.json');
+const locations = require('../data/Locations.json');
+const regions = require('../data/Regions.json');
 
 // Sorted meetups from newest to oldest;
 const sortedMeetups = meetups.sort(function(a, b) {
@@ -21,8 +19,13 @@ regions.forEach(r => {
 // Match upcoming meetups with presenters
 const presentersIn = {};
 regions.forEach(r => {
-  presentersIn[r.Name] = presenters.filter(x =>
-    x.Meetup.includes(meetupsIn[r.Name][0]._id)
+  presentersIn[r.Name] = presenters.filter(x => {
+      if (x.Meetup) {
+        x.Meetup.includes(meetupsIn[r.Name][0]._id)
+      } else {
+        return false;
+      }
+    }
   );
 });
 
