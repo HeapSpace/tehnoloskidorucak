@@ -48,19 +48,19 @@ html {
   color: $color-hs-white;
 }
 
-.bg-red {
-  background-color: $color-hs-red;
-  color: $color-hs-white;
-  a {
-    color: $color-hs-white;
-  }
-}
-
 .bg-beige {
   background-color: $color-hs-beige;
   color: $color-hs-red;
   a {
     color: $color-hs-red;
+  }
+}
+
+.bg-red {
+  background-color: $color-hs-red;
+  color: $color-hs-white;
+  a {
+    color: $color-hs-white;
   }
 }
 
