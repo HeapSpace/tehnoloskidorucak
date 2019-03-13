@@ -60,7 +60,7 @@ html {
   background-color: $color-hs-red;
   color: $color-hs-white;
   a {
-    color: $color-hs-white;
+    color: $color-hs-white !important;
   }
 }
 
