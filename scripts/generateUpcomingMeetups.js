@@ -21,7 +21,7 @@ const presentersIn = {};
 regions.forEach(r => {
   presentersIn[r.Name] = presenters.filter(x => {
       if (x.Meetup) {
-        x.Meetup.includes(meetupsIn[r.Name][0]._id)
+        return x.Meetup.includes(meetupsIn[r.Name][0]._id);
       } else {
         return false;
       }
