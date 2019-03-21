@@ -5,7 +5,10 @@ $(function() {
 		const code = $("#txt").val();
 		$.get(
 			"/.netlify/functions/build?code=" + code,
-			function(data) {alert(data);});
+			function(data) {
+				$("#msg").text(data);
+				//alert(data);
+			});
 	});
 });
 </script>
@@ -17,7 +20,8 @@ $(function() {
 	{{ .Content }}
 
 	<input id="txt" type="text" placeholder="Enter the build code" style="margin: 40px 0; border: 1px solid #666; padding: 4px; width: 50%;"><br>
-	<button id="btn" style="width: 50%; height: 100px; color: #ff0000; background-color: #333; font-weight: bold;">DEPLOY!</button>
+	<button id="btn" style="width: 50%; height: 100px; color: #ff0000; background-color: #333; font-weight: bold; font-size: 2em;">DEPLOY!</button>
+	<div id="msg" style="background-color: #f9f9f9; margin-top: 10px;">...</div>
 </div>
 
 {{ end }}
