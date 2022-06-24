@@ -24,7 +24,7 @@
     "chalk": "^2.4.1",
     "encoding": "^0.1.12",
     "netlify-lambda": "^1.0.3",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "jest": "^23.6.0"
